@@ -1,0 +1,2180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Portal de Serviços e-SAJ</title>
+<!-- Adicionado aqui para não impactar mobile --><link rel="stylesheet" href="/cposg/softheme/src/css/app.css">
+<link rel="stylesheet" href="/cposg/softheme/src/fonts/saj/styles.css">
+<link rel="stylesheet" href="/cposg/css/formulario.css" type="text/css">
+<link rel="stylesheet" href="/cposg/webjars/select2/3.5.4/select2.css" type="text/css">
+<link rel="stylesheet" href="/cposg/webjars/select2/3.5.4/select2-bootstrap.css" type="text/css">
+<link rel="stylesheet" href="/cposg/css/saj/select2/saj-select2.css">
+<script>
+	window.saj = window.saj || {};
+	window.saj.env = window.saj.env || {};
+	window.saj.env.root = '/cposg';
+	window.saj.env.css = '/cposg/css';
+	window.saj.env.js = '/cposg/js';
+	window.saj.env.imagens = '/cposg/imagens';
+
+	window.saj.cpo = window.saj.cpo || {};
+	// transfere variavel se cpo esta rodando para totem
+	window.saj.cpo.totem = 'false' == 'true';
+
+	window.saj.cpo.instanciaConsulta = {
+		SG5: 'true' == 'true',
+		SG5TJ: 'true' == 'true',
+		SG5CR: 'false' == 'true',
+		value: 'SG5TJ'
+	}; 
+</script><script language="javascript" type="text/JavaScript" src="/cposg/js/jquery/jquery.min.js?n=1620728708"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/jquery/jquery.func_toggle.js?n=1ef4903b-beac-41ad-beb4-1ab9c244440c"></script><script language="javascript" type="text/javascript" src="/cposg/js/jquery/jquery.blockUI.min.js?n=c022ec30-2ea7-4edf-bada-b307209c4ca2"></script><script language="javascript" type="text/javascript" src="/cposg/js/jquery/jquery.browser.min.js?n=475052af-52e2-440e-bb2a-8034838dcf68"></script><script language="javascript" type="text/javascript" src="/cposg/webjars/lodash/4.17.5/lodash.js?n=eca803d9-e182-4447-ab27-1d7c6f92cdac"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/select2/select2.js?n=fd75bc22-a140-4cfa-8097-15253a5d66d4"></script><script language="javascript" type="text/JavaScript" src="/cposg/webjars/select2/3.5.4/select2_locale_pt-BR.js?n=b6c76754-e838-41f2-8002-dcbe39e9c128"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-select2.js?n=ebe308eb-442d-4677-bba8-b9815f091328"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-web-2.2.41-4.js?n=b3f7db2d-6a0b-4a92-a3cf-f852208d60bc"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-tooltip.js?n=494aa372-cc8c-434e-bc9d-8606717a6171"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-popup-modal-1.0.0-1.js?n=11b96eb8-8211-46ce-a724-3a60470ec7ae"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-browser.js?n=c7648353-1b78-48b4-941d-72795f191f71"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-mascara-input.js?n=63fae94a-4d78-412d-bfb0-06bf373dcd7f"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-numeroProcesso.js?n=91707d18-1751-4381-9a4b-ffef6c61a041"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj-cpo-cbpesquisa.js?n=3374557194"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/acessibilidade/acessibilidade.js?n=5639e787-cddf-4a61-a70e-2f1718ab515b"></script><script language="javascript" type="text/JavaScript" src="/cposg/softheme/src/js/app.js?n=16289891"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js?n=dd11f0cf-9f37-4611-9447-edbaa5ebb431" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js?n=1791337263" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script><script>
+	(function($){
+		$(function(){
+			var intervalo = 115000;
+			$.saj.manterSessao('/cposg/manterSessao.do', intervalo);
+		});
+				
+	})(jQuery);
+</script><script>
+	window.saj.cpo = window.saj.cpo || {};
+	window.saj.cpo.urlBaseAcessoRecursoProcessoParaUsuario = '/cposg/autorizarAcessoRecursoProcessoParaUsuario.do?processoPK.cdProcesso=RI00455240000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=0150926-38.2010.8.26.0100&cdVara=42';
+	window.saj.cpo.urlBaseAcessoRecursoMidiaAudienciaProcessoParaUsuario= '/cposg/autorizarAcessoRecursoAudienciaGravada.do?processoPK.cdProcesso=RI00455240000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=0150926-38.2010.8.26.0100&cdVara=42';
+	window.saj.cpo.urlBaseAcessoRecursoProcessoComSenha = '/cposg/autorizarAcessoRecursoProcessoPorSenha.do?processoPK.cdProcesso=RI00455240000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=0150926-38.2010.8.26.0100';
+	window.saj.cpo.abrirAutorizarAcessoRecursoProcessoPorSenha = '/cposg/abrirAutorizarAcessoRecursoProcessoPorSenha.do?processoPK.cdProcesso=RI00455240000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=0150926-38.2010.8.26.0100';
+</script><script language="javascript" type="text/JavaScript" src="/cposg/js/acessoRecurso-2.10.2-0.js?n=3062489019"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/acessoProcesso-2.10.2-0.js?n=3127152735"></script><script>
+	(function($){
+		$(function(){
+			var intervalo = 50000;
+			$.saj.manterSessao('/cposg/manterSessao.do', intervalo);
+		});
+				
+	})(jQuery);
+</script><!-- Correção temporária do alinhamento do divisor de seção de formulário do SPW --><script type="text/javascript">
+		$(function(){$('td[background$="spw/fundo_subtitulo2.gif"]').attr('valign', 'top')});
+	</script>
+</head>
+<script language="javascript" type="text/JavaScript">
+	$.saj.getUrlParameter = function getUrlParameter(sParam) {
+		var sPageURL = decodeURIComponent(window.location.search.substring(1)), sURLVariables = sPageURL.split('&'), sParameterName, i;
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+				if (sParameterName[0] === sParam) {
+					return sParameterName[1] === undefined ? true : sParameterName[1];
+				}
+		}
+	};
+  </script><script type="text/javascript">
+	(function($) {
+		$(function(){
+			var captcha = $.saj.getUrlParameter('uuidCaptcha');
+
+			if (!captcha) {
+				return;
+			}
+
+			var url = $('.processoPrinc').attr('href');
+			$('.processoPrinc').attr('href', url+'&uuidCaptcha='+captcha);
+
+			var $processoPaiApenso = $('.processoPaiApenso');
+            $processoPaiApenso.attr('href', $processoPaiApenso.attr('href') + '&uuidCaptcha=' + captcha);
+
+            var $incidente = $('.incidente');
+            $incidente.attr('href', $incidente.attr('href') + '&uuidCaptcha=' + captcha);
+		})
+	})(jQuery);
+</script><body>
+<input type="hidden" name="cdProcesso" value="RI00455240000"><!-- HEADER--><div class="unj-entity-header">
+
+	
+
+
+
+
+<div class="unj-entity-header__actions">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 col-md-4">
+                <a href="javascript:history.back();" class="unj-link-back">
+                    <i class="icon-back"></i>
+                </a>
+            </div>
+            <div class="col-13 col-md-12 unj-ta-r">
+                <!-- Pasta digital -->
+                
+                <!-- Peticionar -->
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+
+
+
+
+
+
+<div class="unj-entity-header__summary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-13">
+                <!--principal -->
+                
+                    <span class="unj-larger-1 " id="numeroProcesso">
+                        0150926-38.2010.8.26.0100
+                    </span>
+                    
+                    
+                        <span class="unj-tag" id="situacaoProcesso">Julgado</span>
+                    
+                    
+                    
+                
+                <!-- incidente -->
+                
+                
+            </div>
+        </div>
+        <div class="row">
+            
+                <div class="col-md-3">
+                    <span class="unj-label">Classe</span>
+                    <div class="lh-1-1 line-clamp__2" id="classeProcesso"> <span title="Apelação Cível">Apelação Cível</span>
+</div>
+                </div>
+            
+            
+                <div class="col-md-4">
+                    <span class="unj-label">
+                        Assunto
+                    </span>
+                    <div class="lh-1-1 line-clamp__2" id="assuntoProcesso"><span title="DIREITO CIVIL - Responsabilidade Civil - Indenização por Dano Moral - Acidente de Trânsito">DIREITO CIVIL - Responsabilidade Civil - Indenização por Dano Moral - Acidente de Trânsito</span></div>
+                </div>
+            
+            
+                <div class="col-md-3">
+                    <span class="unj-label">Seção</span>
+                    <div class="lh-1-1 line-clamp__2" id="secaoProcesso"> <span title="Direito Privado 3">Direito Privado 3</span>
+</div>
+                </div>
+            
+            
+                <div class="col-md-3">
+                    <span class="unj-label">Órgão Julgador</span>
+                    <div class="lh-1-1 line-clamp__2" id="orgaoJulgadorProcesso"> <span title="27ª Câmara de Direito Privado">27ª Câmara de Direito Privado</span>
+</div>
+                </div>
+            
+            
+                <div class="col-md-2">
+                    <span class="unj-label">Área</span>
+                    <div class="lh-1-1 line-clamp__2" id="areaProcesso"><span title="Cível">Cível</span></div>
+                </div>
+            
+            <!-- Processo principal -->
+            
+        </div>
+    </div>
+</div>
+
+	
+
+
+
+
+
+<div class="unj-entity-header__details">
+    <div class="container">
+        <div class="unj-ta-r">
+            <a href="#maisDetalhes" class="unj-link-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="maisDetalhes">
+                <span class="unj-link-collapse__show">
+                    <i class="unj-link-collapse__icon glyph glyph-chevron-down"></i>
+                    Mais
+                </span>
+                <span class="unj-link-collapse__hide">
+                    <i class="unj-link-collapse__icon glyph glyph-chevron-up"></i>
+                    Recolher
+                </span>
+            </a>
+        </div>
+        <div id="maisDetalhes" class="collapse" aria-expanded="false">
+            <div class="row unj-row--border-top">
+                
+                
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Relator</span>
+                        <div class="line-clamp__2" id="relatorProcesso"><span title="MOURÃO NETO">MOURÃO NETO</span></div>
+                    </div>
+                
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Valor da ação</span>
+                        <div class="line-clamp__2" id="valorAcaoProcesso"><span title="72.000,00">72.000,00</span></div>
+                    </div>
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Outros números</span>
+                        <div class="text-wrap">
+                            
+                            <div>
+                                    0028633-22.2017.8.26.0100, 583.00.2010.150926
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Origem</span>
+                        <div class="line-clamp__2"><span title="Comarca de São Paulo / Foro Central Cível / 22ª Vara Cível">Comarca de São Paulo / Foro Central Cível / 22ª Vara Cível</span></div>
+                    </div>
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Volume / Apenso</span>
+                        <div class="line-clamp__2" id="volumeApensoProcesso"><span title="7 / 0">7 / 0</span></div>
+                    </div>
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Última carga</span>
+                        <div>
+                            <span class="labelClass">Origem:</span> Serviço de Processamento de Recursos / SJ 3.3.7 - Serv. de Proces. Rec. aos Trib. Sup. Dir. Privado 3.<span class="labelClass">Remessa:</span> 23/10/2020
+                            <span class="labelClass">Destino:</span> Foro / Foro Central Cível.<span class="labelClass">Recebimento:</span> 23/10/2020 
+                        </div>
+                    </div>
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+  
+  <div class="div-conteudo container unj-mb-40">
+  	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+
+
+
+
+    
+
+
+
+<aside class="aside-nav aside-nav--left"><div class="aside-nav__inner">
+        <header class="aside-nav__main-menu__header"><span class="aside-nav__main-menu__header__text">  Menu e-SAJ</span>
+            <a href="#" class="aside-nav__user__close-button close-offcanvas">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/icons/icon-close--light.png" alt=""></a>
+        </header><nav class="aside-nav__main-menu"><ul class="aside-nav__main-menu__list" id="conteudoMenuEsaj"></ul></nav><div id="esaj-beta-switcher-placeholder"></div>
+    </div>
+</aside><aside class="aside-nav aside-nav--right aside-nav__user"><div class="aside-nav__inner">
+        <div class="aside-nav__user__sign">
+            <div class="aside-nav__user__sign__brand">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/aside/brasoes/br-tjsp.jpg" alt="">
+</div>
+            <ul class="aside-nav__user__sign__list">
+<li><span class="aside-nav__user__sign__place">Tribunal de Justiça do Estado de São Paulo</span></li>
+            </ul>
+<a href="#" class="aside-nav__user__close-button close-offcanvas">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/icons/icon-close--dark.png" alt=""></a>
+        </div>
+        <hr>
+<div class="aside-nav__user__info">
+            <h4 class="aside-nav__user__title">Minha conta</h4>
+            <ul class="aside-nav__user__info__list">
+<li class="aside-nav__user__info__list__item"><span class="aside-nav__user__info__name" id="menuNmUsuarioLogado"></span></li>
+                <li class="aside-nav__user__info__list__item"><span class="aside-nav__user__info__oab" id="menuUsuarioOabs">OAB: </span></li>
+            </ul>
+<ul class="aside-nav__user__info__list-access">
+<li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" href="https://esaj.tjsp.jus.br/esaj/cadastro.do">Meu perfil</a></li>
+                
+                    <li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" href="https://esaj.tjsp.jus.br/caixapostal">Caixa Postal</a></li>
+                
+                <li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" id="logoutLink" href="#">Sair</a></li>
+            </ul>
+</div>
+    </div>
+</aside><header><link rel="shortcut icon" href="https://esaj.tjsp.jus.br/esaj/tema/padrao/clientes/SP/imagens/favicon.ico" type="image/x-icon">
+<link href="https://esaj.tjsp.jus.br/esaj/app.css" rel="stylesheet" type="text/css">
+<nav class="header__navbar"><a class="header__navbar__menu-hamburger open__aside-nav--left navbar-menu-hamburger__item__link">
+            <span class="menu-hamburger__alert" style="display:none;"></span>
+            <span class="glyph glyph-hamburger"></span>
+        </a>
+
+        <h1 class="header__navbar__title" href="">
+<a class="linkLogo" href="https://esaj.tjsp.jus.br/esaj/redirecionarNovoEsaj.do"><strong>e-SAJ</strong></a> | Consulta de Processos do 2ºGrau</h1>
+
+        <ul class="header__navbar__menu header__navbar__menu--right">
+<li class="header__navbar__menu__item header__navbar__menu__item--initials">
+                <a class="header__navbar__brand__initials" href="http://www.tjsp.jus.br/"> TJSP </a>
+            </li>
+            <li class="header__navbar__menu__item header__navbar__menu__item--user">
+               <span class="header__navbar__name open__aside-nav--right">
+                     <span id="headerNmUsuarioLogado" class="header__navbar__name__text"></span>
+                     <span class="glyph glyph-contact header__navbar__name__icon"></span>
+               </span>
+            </li>
+        </ul></nav></header><div class="offcanvas-backdrop"></div>
+
+
+<script>
+    var dict = {
+        'certificado.tituloCertificadoDigital': 'Certificado digital',
+        'certificado.msgCarregandoCertificado': 'Carregando certificados...',
+        'certificado.msgNenhumCertificadoEncontrado': 'Nenhum certificado encontrado',
+        'certificado.msgErroCarregarCertificado': 'Erro ao carregar certificados',
+        'certificado.msgCertificadoExpirado': '[Expirado]',
+        'certificado.msgCertificadoNaoValido': '[Ainda não válido]',
+        'certificado.msgCertificadoNaoIcpBrasil': '[Não ICP-Brasil]',
+        'certificado.tituloProblemasAoAssinar': 'Falha de comunicação com o dispositivo de assinatura digital',
+
+        'label.contato': 'Contato',
+        'label.identificarSe': 'Identificar-se ',
+
+        'mensagem.aguarde': 'Por favor, aguarde.',
+        'mensagem.paginaNaoCarregada': 'Não foi possível carregar a página.',
+        'mensagem.marcarLido': 'Marcar como lido',
+        'mensagem.registrosSelecionados': 'Registros selecionados',
+        'mensagem.registroJaSelecionado': 'Este registro já está selecionado',
+
+        'mensagem.data.invalida': 'A data digitada é inválida.',
+        'mensagem.data.anoInvalido': 'O ano informado deve ser maior que',
+        'mensagem.data.mesInvalido': 'O mês não pode ser maior que 12.',
+        'mensagem.data.mes': 'O mês',
+        'mensagem.data.mesMaior29dias': 'não pode ter mais que 29 dias.',
+        'mensagem.data.mesMaior28dias': 'não pode ter mais que 28 dias.',
+        'mensagem.data.mesMaior31dias': 'não pode ter mais que 31 dias.',
+        'mensagem.data.mesMaior30dias': 'não pode ter mais que 30 dias.',
+
+        'mensagem.email.invalido': 'O formato do endereço de e-mail não é válido. Verifique se ele tem o formato "usuario@dominio".',
+        'mensagem.email.caracteresInvalidos': 'O endereço de e-mail possui caracteres inválidos',
+        'mensagem.email.usuarioInvalido': 'O formato do usuário informado no endereço de e-mail não é válido.',
+        'mensagem.email.ipInvalido': 'O endereço IP informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioInvalido': 'O formato do domínio informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioIncompleto': 'O domínio informado no endereço de e-mail deve possuir pelo menos duas partes. Por exemplo: "usuario@empresa.com.br".',
+
+        'mensagem.texto.tamanhoInvalido': 'O tamanho do texto digitado é maior do que o tamanho permitido. Tamanho permitido:',
+        'mensagem.texto.caracter': 'O caracter',
+        'mensagem.texto.caracterPosicaoInvalida': 'não está permitido na posição',
+
+        'mensagem.numero.numeroInvalido': 'O valor digitado não é um número válido.',
+        'mensagem.numero.numeroNaoPodeCasasDecimais': 'O número não pode conter casas decimais',
+        'mensagem.numero.numeroCasaDecimaisInvalidas': 'O número de casas decimais é inválido. O número pode conter apenas',
+        'mensagem.numero.casaDecimais': 'casas decimais',
+        'mensagem.numero.numeroInteiroInvalido': 'O número de dígitos inteiros é inválido. O número pode conter apenas',
+        'mensagem.numero.digitosInteiros': 'dígitos inteiros',
+        'mensagem.numero.numeroTamanhoInvalido': 'O número digitado não pode ser maior que',
+        'mensagem.numero.numeroZeroInvalido': 'O número digitado deve ser diferente de zero.'
+    }
+</script><script>
+    var appEsajLayout = appEsajLayout || {};
+    appEsajLayout.urlNovoMenuHtml = 'https://esaj.tjsp.jus.br/esaj/menuPortalV2Html.do?servico=190201';
+
+    var appEsajCas = appEsajCas || {};
+    appEsajCas.urlServicoConteudoIdentificacao = 'https://esaj.tjsp.jus.br/sajcas/conteudoIdentificacaoJson?script=1637996681616&retorno=' + encodeURIComponent(location.href);
+</script><script src="https://esaj.tjsp.jus.br/esaj/js/portalV2-bundle.js?n=806192629"></script><script src="https://esaj.tjsp.jus.br/sajcas/seletorVersaoBeta.js?n=434c3578-e863-4461-bb6d-30161efd7bfe&amp;versao=2"></script><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Apensos / Vinculados</h2>
+		
+	
+</div>
+	<!--  Tabela de (apensos) -->
+	<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr>
+<td colspan="3" align="left" id="dadosApensosNaoDisponiveis">Não há processos apensos ou vinculados para este processo.</td>
+				</tr></table>
+<!-- Tabela de (apensos) --><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Números de 1ª Instância</h2>
+		
+	
+</div>
+
+
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<td align="left" valign="top" width="200">Nº de 1ª instância</td>
+		<td align="left" valign="top" width="250">Foro</td>
+		<td align="left" valign="top" width="200">Vara</td>
+		<td align="left" valign="top" width="250">Juiz</td>
+		<td align="left" valign="top" width="*">Obs.</td>
+	  </tr>
+<tr class="fundoEscuro" height="2">
+<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+</table>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr class="fundoClaro">
+<td align="left" valign="top" width="200">
+			
+				
+				
+					583.00.2010.150926-1/000000-000
+				
+			
+	    </td>
+		<td align="left" valign="top" width="250">
+	      Foro Central Cível
+	    </td>
+		<td align="left" valign="top" width="200">
+	      22ª Vara Cível
+	    </td>
+	    <td align="left" valign="top" width="250">
+	      Fernando Henrique de Oliveira Biolcati
+		</td>
+		<td align="left" valign="top">
+	      -
+		</td>
+	  </tr></table>
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+		
+		
+	
+
+	
+		
+		
+			<h2 class="subtitle">Partes do Processo</h2>
+		
+	
+</div>
+
+<!--  cabecalho da tabela de lista (partes) -->
+
+
+<!--  dados da lista partes principais (partes) -->
+<table id="tablePartesPrincipais" style="margin-left:15px; margin-top:1px;" align="center" border="0" cellpadding="0" cellspacing="0" width="98%">
+<tr class="fundoClaro poloAtivo">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Apelante: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Sul América Companhia Nacional de Seguros
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogado:&amp;nbsp</span>
+		  
+			  
+			  
+				  Bruno Henrique de Oliveira Vanderlei
+			  
+		  
+		  <input type="hidden" value="21678PE"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+<tr class="fundoClaro poloPassivo">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Apdo/Apte: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Edileusa Maria da Silva
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogado:&amp;nbsp</span>
+		  
+			  
+			  
+				  Jose Gomes Neto
+			  
+		  
+		  <input type="hidden" value="51578SP"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+<tr class="fundoClaro poloTerceiro">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Interessado: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Anderson dos Santos Polli Riola
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogado:&amp;nbsp</span>
+		  
+			  
+			  
+				  Henrique Aguiar de Souza
+			  
+		  
+		  <input type="hidden" value="252634SP"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+</table>
+<!--  dados da lista todas as partes (partes) --><table id="tableTodasPartes" style="margin-left:15px; margin-top:1px; display: none; " align="center" width="98%" border="0" cellspacing="0" cellpadding="0">
+<tr class="fundoClaro poloAtivo">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Apelante: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Sul América Companhia Nacional de Seguros
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogado:&amp;nbsp</span>
+		  
+			  
+			  
+				  Bruno Henrique de Oliveira Vanderlei
+			  
+		  
+		  <input type="hidden" value="21678PE"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+<tr class="fundoClaro poloPassivo">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Apdo/Apte: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Edileusa Maria da Silva
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogado:&amp;nbsp</span>
+		  
+			  
+			  
+				  Jose Gomes Neto
+			  
+		  
+		  <input type="hidden" value="51578SP"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+<tr class="fundoClaro poloPassivo">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Apdo/Apte: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Elaine de Mello Ratto
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogada:&amp;nbsp</span>
+		  
+			  
+			  
+				  Tereza Valeria Blaskevicz
+			  
+		  
+		  <input type="hidden" value="133951SP"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+<tr class="fundoClaro poloPassivo">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Apdo/Apte: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  João Carlos Queiroz Ferreira Ratto
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogada:&amp;nbsp</span>
+		  
+			  
+			  
+				  Tereza Valeria Blaskevicz
+			  
+		  
+		  <input type="hidden" value="133951SP"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+<tr class="fundoClaro poloTerceiro">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Interessado: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Anderson dos Santos Polli Riola
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogado:&amp;nbsp</span>
+		  
+			  
+			  
+				  Henrique Aguiar de Souza
+			  
+		  
+		  <input type="hidden" value="252634SP"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+</table>
+<div id="divLinksTituloBlocoPartes" style="text-align:right">
+        
+
+
+
+
+
+
+
+<input id="mensagemNaoExibidapartes" type="hidden" value=""><input id="linkNaoExibidopartes" type="hidden" value="Recolher"><span id="mensagensExibindopartes" class="mensagemExibindo">
+
+</span>  
+<a id="linkpartes" href="javascript:" class="linkNaoSelecionado unj-link-collapse">
+    <span id="setasDireitapartes" class="setasDireita">
+        <i class="unj-link-collapse__icon glyph glyph-chevron-down"></i>
+    </span>
+    Mais</a>
+
+<script>
+	$(function() {
+		var controlarLink = function() {
+			var $linkNaoExibido = $('input#linkNaoExibidopartes');
+			var conteudoLinkNaoApresentado = $linkNaoExibido.val();
+			var $link = $('a#linkpartes');
+
+			$linkNaoExibido.val($link.html());
+			$link.html(conteudoLinkNaoApresentado);
+		};
+
+		var controlarMensagem = function() {
+			var $mensagemNaoExibida = $('input#mensagemNaoExibidapartes');
+			var $spanMensagem = $('span#mensagensExibindopartes');
+			var mensagemExibida = $spanMensagem.html();
+			var mensagemNaoExibida = $mensagemNaoExibida.val();
+
+			$spanMensagem.html(mensagemNaoExibida);
+			$mensagemNaoExibida.val(mensagemExibida);
+		};
+
+		var controlarMensagemLink = function() {
+			controlarMensagem();
+			controlarLink();
+		};
+
+		var esconderElementosExtrasMostrarDefault = function() {
+			$('#tableTodasPartes').hide();
+			$('#tablePartesPrincipais').show();
+		};
+
+		var mostrarElementosExtrasEsconderDefault = function() {
+			$('#tablePartesPrincipais').hide();
+			$('#tableTodasPartes').show();
+		};
+
+		var initPagina = function() {
+            var setasDireita = '<span id="setasDireitapartes" class="setasDireita"><i class="unj-link-collapse__icon glyph glyph-chevron-up"></i></span>';
+			var $linkEscondido = $('input#linkNaoExibidopartes');
+			$linkEscondido.val(setasDireita+$linkEscondido.val());
+		};
+
+		var bindLink = function() {
+			var $link = $('a#linkpartes');
+			$link.funcToggle('click', mostrarElementosExtrasEsconderDefault, esconderElementosExtrasMostrarDefault);
+			$link.bind('click', controlarMensagemLink);
+		};
+
+		initPagina();
+		bindLink();
+		esconderElementosExtrasMostrarDefault();
+	});
+</script>
+</div>
+
+
+			  	
+			  	
+
+				
+
+			  	
+
+				
+
+			  	
+
+			  	
+			  	
+			  	
+			
+	  	
+			
+				
+				
+			  	
+
+				
+
+			  	
+
+				
+		  			
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+		
+		
+	
+
+	
+		
+		
+			<h2 class="subtitle">Movimentações</h2>
+		
+	
+</div>
+
+ 
+	
+
+<table style="margin-left:15px; margin-top:1px;" align="center" border="0" cellpadding="0" cellspacing="0" width="98%">
+<thead>
+<tr>
+<th width="120" class="label" style="vertical-align: bottom">Data</th>
+				  <th valign="middle" width="20" aria-hidden="true"> </th>
+				  <th valign="middle" class="label">Movimento</th>
+				</tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+</thead>
+<tbody id="tabelaUltimasMovimentacoes">
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        23/10/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para  Vara de Origem (Devolução Provisória - STF/STJ
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        23/09/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos do Posto de Digitalização pelo Processamento de Recursos
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/12/2019
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2019.00232345-4, referente ao processo 0150926-38.2010.8.26.0100/90007 - Contra-Razões</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/12/2019
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2019.00231239-9, referente ao processo 0150926-38.2010.8.26.0100/90006 - Contra-Razões</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        18/11/2019
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2019.00217833-5, referente ao processo 0150926-38.2010.8.26.0100/90004 - Agravo em Recurso Especial</span>
+
+        
+    </td>
+</tr>
+</tbody>
+<tbody style="display: none;" id="tabelaTodasMovimentacoes">
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        23/10/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para  Vara de Origem (Devolução Provisória - STF/STJ
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        23/09/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos do Posto de Digitalização pelo Processamento de Recursos
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/12/2019
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2019.00232345-4, referente ao processo 0150926-38.2010.8.26.0100/90007 - Contra-Razões</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/12/2019
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2019.00231239-9, referente ao processo 0150926-38.2010.8.26.0100/90006 - Contra-Razões</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        18/11/2019
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2019.00217833-5, referente ao processo 0150926-38.2010.8.26.0100/90004 - Agravo em Recurso Especial</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/03/2019
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Processamento de Recurso
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/03/2019
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento de Recursos aos Trib. Superiores
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/03/2019
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2019.00020607-4, referente ao processo 0150926-38.2010.8.26.0100/90002 - Recurso Especial Cível (Petição Avulsa)</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/03/2019
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2019.00015879-0, referente ao processo 0150926-38.2010.8.26.0100/90001 - Recurso Especial Cível (Petição Avulsa)</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        25/10/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Protocolo nº 2018.00249652-5 Embargos de Declaração</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        25/10/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2018.00252654-4, referente ao processo 0150926-38.2010.8.26.0100/50001 - Embargos de Declaração</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        01/10/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Acórdão registrado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Acórdão registrado sob nº 20180000734860, com 23 folhas.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        01/10/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 28/09/2018
+Tipo de publicação: Intimação de Acórdão
+Número do Diário Eletrônico: 2669</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        24/09/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Proc. de Grupos e Camaras para Intimação do Acórdão
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        21/09/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Proc. de Grupos e Câmaras para Intimação do Acórdão  - Julgamento Virtual
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        20/09/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=19" name="M" cddocumento="19">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=19" name="M" cddocumento="19">
+                    Julgado virtualmente
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Negaram provimento ao recurso da autora e deram provimento parcial aos recursos dos réus e da seguradora. V.U.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/09/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Julgamento Virtual Iniciado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/09/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=17" name="M" cddocumento="17">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=17" name="M" cddocumento="17">
+                    Despacho
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Como se depreende da petição inicial (fls. 2/9) e dos documentos que a instruíram (fls. 10/38), no dia 17 de julho de 2009, por volta das 12h00min, na Rua Tabapuã, altura do número 455, em São Paulo (SP), Edileusa Maria da Silva foi atropelada pelo veículo marca Ford, modelo Fiesta, placa DOR 1640, conduzido por Anderson dos Santos Polli Riola e de propriedade de Élcio de Freitas Macedo Filho, tendo sofrido lesões corporais graves, que resultaram em sua incapacidade para o exercício da profissão de costureira. Com base nesses fatos, Edileusa instaurou esta demanda, requerendo a condenação de Anderson e Élcio ao pagamento: (i) de indenização por danos materiais, estimados em R$ 21.000,00 (vinte e um mil reais); (ii) de indenização por danos morais, em valor correspondente a 1.000 (mil) salários mínimos; e (iii) de pensão mensal vitalícia, no valor de R$ 1.253,00 (mil e duzentos e cinquenta e três reais), caso viesse "a se tornar incapacitada para o exercício de sua profissão". O corréu Anderson por meio da petição de fls. 98/102, instruída com documentos (fls. 103/105), formulou pedido de nomeação à autoria de João Queiroz Ratto e de Elaine de Mello Ratto, porque (i) estava prestando serviços a João e realizou a manobra que deu causa ao acidente seguindo ordem do filho de João e (ii) porque o veículo era de propriedade de Elaine. A petição inicial foi aditada a fls. 127/128, com pedido de exclusão do polo passivo de Élcio, inclusão de Elaine e denunciação da lide a João Carlos Queiroz Ferreira Ratto, o que foi deferido pela decisão de fls. 131, depois de anuência do corréu Anderson (fls. 130). A autora, em seguida, manifestou expressa concordância com a nomeação à autoria de João Queiroz Ratto (fls. 133/134), o que foi deferido (fls. 135). A corré Elaine formulou pedido de denunciação da lide à Sul América Companhia Nacional de Seguros (fls. 152/159 verso), enquanto o corréu João Carlos ofereceu contestação (fls. 160/166), com documentos (fls. 167/172), arguindo preliminar de ilegitimidade passiva e, no mérito, requerendo a improcedência da demanda, porque da autora a culpa exclusiva pelo evento, e impugnando as verbas postuladas na exordial. A autora se pronunciou sobre as peças de defesa (fls. 175/244), proferindo-se na sequência a decisão de fls. 245, que reconheceu a revelia da corré Elaine. A decisão saneadora de fls. 259/260: (i) reafirmou a revelia da corré Elaine; (ii) deferiu o pedido de denunciação da lide à Sul América; e (iii) determinou a exclusão do corréu Anderson. Contra essa decisão a corré Elaine interpôs o Agravo de Instrumento n. 0047258-55.2013.8.26.0000, que foi recebido no efeito suspensivo e ao final desprovido por esta C. Câmara, tendo transitado em julgado, inobstante atacado por embargos de declaração (rejeitados), recurso especial (inadmitido) e agravo em recurso especial (cujo seguimento foi negado) e agravo regimental em agravo em recurso especial (desprovido) (fls. 263/274, 295/302, 523/525, 528/531, 534/546, 560/561, 564/571 e 715/723 e 727/844). O corréu excluído (Anderson), por seu turno, ofereceu embargos de declaração (fls. 291), acolhidos pela decisão de fls. 1.125, para condenar a autora "ao pagamento das custas e despesas arcadas pelo corréu ANDERSON, devidamente atualizadas desde o desembolso e acrescidas de juros moratórios de 1% ao mês, quando da execução definitiva, a partir do decurso do prazo de 15 dias para pagamento do débito ora fixado, consoante o artigo 523, do Código de Processo Civil, bem como de honorários advocatícios, arbitrados por apreciação equitativa em R$ 1.000,00, nos termos do artigo 85, § 8º, do Código de Processo Civil, corrigidos a partir da presente data e acrescidos dos juros de mora de 1% ao mês, na forma mencionada, devendo ser observado o artigo 98, § 3º, do Código de Processo Civil". A seguradora denunciada ofereceu contestação (fls. 303/313), instruída com documentos (fls. 314/413), aceitando a intervenção no feito, desde que observados os limites de sua responsabilidade, e tecendo considerações sobre a lide principal, postulando a rejeição da pretensão indenizatória, sustentando que o acidente ocorreu por culpa da autora e a inexistência de danos morais. Ademais, por cautela, discorreu sobre a verba honorária de sucumbência. As partes foram intimadas a especificar provas, justificando a pertinência (fls. 421/424). Atendendo a esse comando, a demandante postulou a realização de prova oral e pericial médica (fls. 425). A seguradora denunciada também pediu a produção de prova pericial (fls. 426). E a corré Elaine protocolou a petição de fls. 427/431, postulando, no que tem mais relevo, a anulação das decisões proferidas "após o deferimento da liminar no recurso de agravo de instrumento". A decisão de fls. 432 determinou a realização de prova pericial médica, a cargo do Instituto de Medicina Social e de Criminologia de São Paulo IMESC, e ordenou que a secretaria certificasse "estado do Agravo de Instrumento". Cumprida esta ordem (fls. 433/436), a autora e a corré Elaine apresentaram quesitos (fls. 438/440). Laudo pericial acostado a fls. 449/453 e complementado a fls. 584/586. Além da prova pericial, também foram colhidos os depoimentos pessoais das partes e ouvidas três testemunhas (fls. 647/655, 680 e 696/702). Ademais, foram requisitadas informações ao Instituto Nacional do Seguro Social INSS (fls. 846/878 e 882/897), sobre as quais as partes se manifestaram, inclusive juntando novos documentos (fls. 900/901, 904/945 e 947/952). A decisão de fls. 953 declarou encerrada a instrução processual e facultou às partes o oferecimento de memoriais, apresentados pela autora (fls. 956/957), pela seguradora denunciada (fls. 969/961) e pelos réus (fls. 977/986, protocolados em 14 de dezembro de 2016, mas juntados aos autos apenas em 10 de janeiro de 2017, ou seja, depois de proferida a sentença). A sentença guerreada: (i) julgou a lide principal parcialmente procedente, para condenar solidariamente os réus ao pagamento: "a) de indenização por lucros cessantes, consistente na diferença entre o salário de benefício da autora, de R$ 1.092,57, e o montante recebido pelo gozo de auxílio-doença, durante o período de afastamento, corrigida monetariamente pela tabela prática do Egrégio Tribunal de Justiça de São Paulo desde a data dos respectivos pagamentos do benefício, e com a incidência de juros de mora de 1% ao mês a partir do evento danoso; b) de pensão, no valor mensal de R$ 1.092,57, desde a cessação do auxílio-doença e até a reabilitação, com o acréscimo, até a data em que completaria 60 anos a vítima, de 13° parcela e 1/3 de férias, e, após isto, apenas da 13° parcela, corrigidos desde a data em que deveriam ter sido pagos, com o acréscimo de juros de mora de 1% ao mês, a partir do evento danoso, conforme a súmula nº 54, do Superior Tribunal de Justiça; e c) do montante de R$ 50.000,00, a título de danos morais, corrigido segundo a tabela prática do Egrégio Tribunal de Justiça de São Paulo a partir da publicação da presente sentença, e com juros de mora de 1% ao mês, a contar do evento danoso, a teor das Súmulas nº 43 e 54 do Supremo Tribunal de Justiça". Os ônus de sucumbência foram imputados aos demandados, arbitrando-se a verba honorária em 15% (quinze por cento) do valor da condenação; e (ii) procedente a lide secundária, "para condenar a denunciada SUL AMÉRICA a ressarcir os prejuízos da denunciante com relação aos fatos em questão, nos limites da apólice", consignando que, "não tendo havido pretensão resistida por parte da denunciada, já que em sua defesa admitiu a existência da apólice e seu dever de indenizar, deixo de condená-la nas verbas de sucumbência" (fls. 962/974). A autora manejou contra o decisum embargos de declaração (fls. 988/990), os quais foram acolhidos pela decisão de fls. 991/992, "unicamente no sentido de conceder a tutela provisória de urgência para DETERMINAR aos corréus ELAINE E JOÃO o pagamento da importância mensal de um salário mínimo nacional, com posterior desconto na verba condenatória, observado como limite o montante de R$1.092,57, com posteriores atualizações, fixados na sentença, e até a reabilitação da autora". Também os réus ofereceram embargos de declaração (fls. 1.012/1.019), que foram rejeitados pela decisão de fls. 1.022/1.023, tendo em vista seu caráter infringente. Inconformada com a solução conferida à lide, a companhia de seguros ofereceu a apelação de fls. 995/1.002, pedindo ou a reforma integral da sentença, para que a ação seja julgada improcedente, ou sua reforma parcial, a fim de reduzir o valor da indenização por danos morais. A demandante também apelou, buscando a reforma parcial da sentença, para "fixar a reparação por danos materiais (lucros cessantes) no valor de R$ 3.000,00 (três mil reais) mensais, mantidos os demais critérios da condenação estabelecidos pela sentença neste particular", bem como para majorar a verba honorária de sucumbência (fls. 1.028/1.033). Por fim, os demandados ofereceram a apelação de fls. 1.043/1.086, postulando ou a anulação da sentença, tendo em vista que seus memorais foram juntados aos autos depois de prolatada a sentença e "as nulidades do laudo pericial", ou sua reforma integral, seja para reconhecer a ilegitimidade passiva do corréu João Carlos seja para julgar a demanda improcedente, ou, ainda, sua reforma parcial, quer para reconhecer a culpa concorrente quer para afastar ou reduzir a pensão mensal quer para afastar ou reduzir a indenização por danos morais. Contrarrazões da seguradora denunciada a fls. 1.092/1.094 verso, dos réus a fls. 1.097/1.103 e da autora a fls. 1.112/1.119. Inclua-se para julgamento virtual (voto n. 16.387). Intimem-se.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/04/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">
+Mourão Neto</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        18/04/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para o Relator (Conclusão)
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/03/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 16/03/2018
+Tipo de publicação: Despacho
+Número do Diário Eletrônico: 2537</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        15/03/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Processamento de Grupos e Camaras
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/03/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento Grupos e Câmaras - Com Despacho
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/03/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=11" name="M" cddocumento="11">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=11" name="M" cddocumento="11">
+                    Despacho
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Defiro o pedido de vista dos autos formulado às fls.1133, pelo prazo legal. Intimem-se. (ref. a pet. prot. 2018.00057548-8 de Anderson dos Santos Polli Riola)</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        13/03/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2018.00057548-8, referente ao processo 0150926-38.2010.8.26.0100/90000 - Vista dos Autos</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        21/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 18/08/2017
+Tipo de publicação: Distribuídos
+Número do Diário Eletrônico: 2413</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        18/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">
+Mourão Neto</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        16/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Relator (Conclusão)
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        16/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Distribuição por Competência Exclusiva
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">AG.0047258-55.2013.8.26.0000
+Órgão Julgador: 42 - 27ª Câmara de Direito Privado
+Relator: 13619 - Mourão Neto</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 10/08/2017
+Tipo de publicação: Entrados
+Número do Diário Eletrônico: 2407</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Distribuidor de Recursos
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Distribuição de Recursos
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        08/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Processo Cadastrado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">SJ 2.1.3 - Serviço de Entrada de Autos de Direito Privado 3</span>
+
+        
+    </td>
+</tr>
+</tbody>
+</table>
+<div id="divLinksTituloBlocoMovimentacoes" style="text-align:right">
+		
+
+
+
+
+
+
+
+<input id="mensagemNaoExibidamovimentacoes" type="hidden" value=""><input id="linkNaoExibidomovimentacoes" type="hidden" value="Recolher"><span id="mensagensExibindomovimentacoes" class="mensagemExibindo">
+
+</span>  
+<a id="linkmovimentacoes" href="javascript:" class="linkNaoSelecionado unj-link-collapse">
+    <span id="setasDireitamovimentacoes" class="setasDireita">
+        <i class="unj-link-collapse__icon glyph glyph-chevron-down"></i>
+    </span>
+    Mais</a>
+
+<script>
+	$(function() {
+		var controlarLink = function() {
+			var $linkNaoExibido = $('input#linkNaoExibidomovimentacoes');
+			var conteudoLinkNaoApresentado = $linkNaoExibido.val();
+			var $link = $('a#linkmovimentacoes');
+
+			$linkNaoExibido.val($link.html());
+			$link.html(conteudoLinkNaoApresentado);
+		};
+
+		var controlarMensagem = function() {
+			var $mensagemNaoExibida = $('input#mensagemNaoExibidamovimentacoes');
+			var $spanMensagem = $('span#mensagensExibindomovimentacoes');
+			var mensagemExibida = $spanMensagem.html();
+			var mensagemNaoExibida = $mensagemNaoExibida.val();
+
+			$spanMensagem.html(mensagemNaoExibida);
+			$mensagemNaoExibida.val(mensagemExibida);
+		};
+
+		var controlarMensagemLink = function() {
+			controlarMensagem();
+			controlarLink();
+		};
+
+		var esconderElementosExtrasMostrarDefault = function() {
+			$('#tabelaTodasMovimentacoes').hide();
+			$('#tabelaUltimasMovimentacoes').show();
+		};
+
+		var mostrarElementosExtrasEsconderDefault = function() {
+			$('#tabelaUltimasMovimentacoes').hide();
+			$('#tabelaTodasMovimentacoes').show();
+		};
+
+		var initPagina = function() {
+            var setasDireita = '<span id="setasDireitamovimentacoes" class="setasDireita"><i class="unj-link-collapse__icon glyph glyph-chevron-up"></i></span>';
+			var $linkEscondido = $('input#linkNaoExibidomovimentacoes');
+			$linkEscondido.val(setasDireita+$linkEscondido.val());
+		};
+
+		var bindLink = function() {
+			var $link = $('a#linkmovimentacoes');
+			$link.funcToggle('click', mostrarElementosExtrasEsconderDefault, esconderElementosExtrasMostrarDefault);
+			$link.bind('click', controlarMensagemLink);
+		};
+
+		initPagina();
+		bindLink();
+		esconderElementosExtrasMostrarDefault();
+	});
+</script>
+</div>
+
+			  	
+
+			  	
+
+			  	
+			  	
+			  	
+			
+	  	
+			
+				
+				
+			  	
+
+				
+		  			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Subprocessos e Recursos</h2>
+		
+	
+</div>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<th width="140" style="text-align:left">
+					Recebido em
+				</th>
+				
+				<th width="*">Classe</th>
+		    </tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td></td>
+<td></td>
+			</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+						08/10/2018
+					</td>
+					
+
+
+
+
+
+
+<td width="*">
+	<a href="/cposg/show.do?processo.codigo=RI004552412KW&amp;uuidCaptcha=" target="_top">
+		Embargos de Declaração Cível
+		
+			 - 50000
+		
+		
+	</a>
+</td>
+
+				</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+						11/10/2018
+					</td>
+					
+
+
+
+
+
+
+<td width="*">
+	<a href="/cposg/show.do?processo.codigo=RI004552412KX&amp;uuidCaptcha=" target="_top">
+		Embargos de Declaração Cível
+		
+			 - 50001
+		
+		
+	</a>
+</td>
+
+				</tr>
+</table>
+<!--  incidentes --><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Petições diversas</h2>
+		
+	
+</div>
+<!--  Tabela de petições diversas -->
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<thead>
+<tr class="label">
+<th width="140" style="text-align:left">Data</th>
+			      <th width="*">Tipo</th>
+			    </tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td></td>
+					<td></td>
+				</tr>
+</thead>
+<tbody>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+							09/03/2018
+						</td>
+						<td width="*">
+							Vista dos Autos<br>
+</td>
+					</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+							30/01/2019
+						</td>
+						<td width="*">
+							Recurso Especial Cível (Petição Avulsa)<br>
+</td>
+					</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+							05/02/2019
+						</td>
+						<td width="*">
+							Recurso Especial Cível (Petição Avulsa)<br>
+</td>
+					</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+							13/11/2019
+						</td>
+						<td width="*">
+							Agravo em Recurso Especial<br>
+</td>
+					</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+							05/12/2019
+						</td>
+						<td width="*">
+							Contra-Razões<br>
+</td>
+					</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+							06/12/2019
+						</td>
+						<td width="*">
+							Contra-Razões<br>
+</td>
+					</tr>
+</tbody>
+</table>
+<!--  Tabela de petições diversas --><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Composição do Julgamento</h2>
+		
+	
+</div>
+	
+	<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<td width="140">Participação</td>
+		  <td>Magistrado</td>
+		</tr>
+<tr class="fundoEscuro" height="2">
+<td></td>
+			<td></td>
+		</tr>
+</table>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="fundoClaro itemComposicaoJulgamento">
+<td valign="top" width="140" class="label" style="padding-bottom: 5px">
+		      Relator
+			</td>
+			<td valign="top" style="padding-bottom: 5px">
+		      Mourão Neto (16387)
+		    </td>
+		  </tr>
+<tr class="fundoEscuro itemComposicaoJulgamento">
+<td valign="top" width="140" class="label" style="padding-bottom: 5px">
+		      2º 
+			</td>
+			<td valign="top" style="padding-bottom: 5px">
+		      Marcos Gozzo 
+		    </td>
+		  </tr>
+<tr class="fundoClaro itemComposicaoJulgamento">
+<td valign="top" width="140" class="label" style="padding-bottom: 5px">
+		      3º 
+			</td>
+			<td valign="top" style="padding-bottom: 5px">
+		      Campos Petroni 
+		    </td>
+		  </tr>
+</table>
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Julgamentos</h2>
+		
+	
+</div>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<td align="left" valign="top" width="150">Data</td>
+		<td align="left" valign="top" width="220">Situação do julgamento</td>
+		<td align="left" valign="top" width="*">Decisão</td>
+	  </tr>
+<tr class="fundoEscuro" height="2">
+<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+</table>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr class="fundoClaro">
+<td valign="top" align="left" width="150">
+		      20/09/2018
+			</td>
+			<td align="left" valign="top" width="220">
+		      Julgado
+		    </td>
+			<td align="left" valign="top" width="*">
+		      Negaram provimento ao recurso da autora e deram provimento parcial aos recursos dos réus e da seguradora. V.U.
+		    </td>
+		  </tr></table>
+<br><br><footer><nav class="navbar__footer"><div class="navbar__footer__container">
+
+            <ul class="navbar__footer__list-brand">
+<li class="navbar__footer__list-brand__item">
+                    <a href="https://www.softplan.com.br/solucoes/saj-tribunais/" class="navbar__footer__list-brand__item__link link_softplan_tribunais">
+                        <img src="https://esaj.tjsp.jus.br/esaj/img/brand/icon-saj.png" alt="SAJ"></a>
+                </li>
+                <li class="navbar__footer__list-brand__item">
+                    <a href="https://www.softplan.com.br/" class="navbar__footer__list-brand__item__link link_softplan">
+                        <img src="https://esaj.tjsp.jus.br/esaj/img/brand/icon-softplan.png" alt="Softplan"></a>
+                </li>
+            </ul>
+<ul class="navbar__footer__list-actions"></ul>
+</div>
+    </nav></footer>
+</div>
+	
+
+</body>
+</html>

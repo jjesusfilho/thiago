@@ -1,0 +1,3145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Portal de Serviços e-SAJ</title>
+<!-- Adicionado aqui para não impactar mobile --><link rel="stylesheet" href="/cposg/softheme/src/css/app.css">
+<link rel="stylesheet" href="/cposg/softheme/src/fonts/saj/styles.css">
+<link rel="stylesheet" href="/cposg/css/formulario.css" type="text/css">
+<link rel="stylesheet" href="/cposg/webjars/select2/3.5.4/select2.css" type="text/css">
+<link rel="stylesheet" href="/cposg/webjars/select2/3.5.4/select2-bootstrap.css" type="text/css">
+<link rel="stylesheet" href="/cposg/css/saj/select2/saj-select2.css">
+<script>
+	window.saj = window.saj || {};
+	window.saj.env = window.saj.env || {};
+	window.saj.env.root = '/cposg';
+	window.saj.env.css = '/cposg/css';
+	window.saj.env.js = '/cposg/js';
+	window.saj.env.imagens = '/cposg/imagens';
+
+	window.saj.cpo = window.saj.cpo || {};
+	// transfere variavel se cpo esta rodando para totem
+	window.saj.cpo.totem = 'false' == 'true';
+
+	window.saj.cpo.instanciaConsulta = {
+		SG5: 'true' == 'true',
+		SG5TJ: 'true' == 'true',
+		SG5CR: 'false' == 'true',
+		value: 'SG5TJ'
+	}; 
+</script><script language="javascript" type="text/JavaScript" src="/cposg/js/jquery/jquery.min.js?n=1620728708"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/jquery/jquery.func_toggle.js?n=1ef4903b-beac-41ad-beb4-1ab9c244440c"></script><script language="javascript" type="text/javascript" src="/cposg/js/jquery/jquery.blockUI.min.js?n=c022ec30-2ea7-4edf-bada-b307209c4ca2"></script><script language="javascript" type="text/javascript" src="/cposg/js/jquery/jquery.browser.min.js?n=475052af-52e2-440e-bb2a-8034838dcf68"></script><script language="javascript" type="text/javascript" src="/cposg/webjars/lodash/4.17.5/lodash.js?n=eca803d9-e182-4447-ab27-1d7c6f92cdac"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/select2/select2.js?n=fd75bc22-a140-4cfa-8097-15253a5d66d4"></script><script language="javascript" type="text/JavaScript" src="/cposg/webjars/select2/3.5.4/select2_locale_pt-BR.js?n=b6c76754-e838-41f2-8002-dcbe39e9c128"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-select2.js?n=ebe308eb-442d-4677-bba8-b9815f091328"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-web-2.2.41-4.js?n=b3f7db2d-6a0b-4a92-a3cf-f852208d60bc"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-tooltip.js?n=494aa372-cc8c-434e-bc9d-8606717a6171"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-popup-modal-1.0.0-1.js?n=11b96eb8-8211-46ce-a724-3a60470ec7ae"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-browser.js?n=c7648353-1b78-48b4-941d-72795f191f71"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-mascara-input.js?n=63fae94a-4d78-412d-bfb0-06bf373dcd7f"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-numeroProcesso.js?n=91707d18-1751-4381-9a4b-ffef6c61a041"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj-cpo-cbpesquisa.js?n=3374557194"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/acessibilidade/acessibilidade.js?n=5639e787-cddf-4a61-a70e-2f1718ab515b"></script><script language="javascript" type="text/JavaScript" src="/cposg/softheme/src/js/app.js?n=16289891"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js?n=dd11f0cf-9f37-4611-9447-edbaa5ebb431" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js?n=1791337263" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script><script>
+	(function($){
+		$(function(){
+			var intervalo = 115000;
+			$.saj.manterSessao('/cposg/manterSessao.do', intervalo);
+		});
+				
+	})(jQuery);
+</script><script>
+	window.saj.cpo = window.saj.cpo || {};
+	window.saj.cpo.urlBaseAcessoRecursoProcessoParaUsuario = '/cposg/autorizarAcessoRecursoProcessoParaUsuario.do?processoPK.cdProcesso=RI0036NSX0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=0021842-13.2011.8.26.0564&cdVara=49';
+	window.saj.cpo.urlBaseAcessoRecursoMidiaAudienciaProcessoParaUsuario= '/cposg/autorizarAcessoRecursoAudienciaGravada.do?processoPK.cdProcesso=RI0036NSX0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=0021842-13.2011.8.26.0564&cdVara=49';
+	window.saj.cpo.urlBaseAcessoRecursoProcessoComSenha = '/cposg/autorizarAcessoRecursoProcessoPorSenha.do?processoPK.cdProcesso=RI0036NSX0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=0021842-13.2011.8.26.0564';
+	window.saj.cpo.abrirAutorizarAcessoRecursoProcessoPorSenha = '/cposg/abrirAutorizarAcessoRecursoProcessoPorSenha.do?processoPK.cdProcesso=RI0036NSX0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=0021842-13.2011.8.26.0564';
+</script><script language="javascript" type="text/JavaScript" src="/cposg/js/acessoRecurso-2.10.2-0.js?n=3062489019"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/acessoProcesso-2.10.2-0.js?n=3127152735"></script><script>
+	(function($){
+		$(function(){
+			var intervalo = 50000;
+			$.saj.manterSessao('/cposg/manterSessao.do', intervalo);
+		});
+				
+	})(jQuery);
+</script><!-- Correção temporária do alinhamento do divisor de seção de formulário do SPW --><script type="text/javascript">
+		$(function(){$('td[background$="spw/fundo_subtitulo2.gif"]').attr('valign', 'top')});
+	</script>
+</head>
+<script language="javascript" type="text/JavaScript">
+	$.saj.getUrlParameter = function getUrlParameter(sParam) {
+		var sPageURL = decodeURIComponent(window.location.search.substring(1)), sURLVariables = sPageURL.split('&'), sParameterName, i;
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+				if (sParameterName[0] === sParam) {
+					return sParameterName[1] === undefined ? true : sParameterName[1];
+				}
+		}
+	};
+  </script><script type="text/javascript">
+	(function($) {
+		$(function(){
+			var captcha = $.saj.getUrlParameter('uuidCaptcha');
+
+			if (!captcha) {
+				return;
+			}
+
+			var url = $('.processoPrinc').attr('href');
+			$('.processoPrinc').attr('href', url+'&uuidCaptcha='+captcha);
+
+			var $processoPaiApenso = $('.processoPaiApenso');
+            $processoPaiApenso.attr('href', $processoPaiApenso.attr('href') + '&uuidCaptcha=' + captcha);
+
+            var $incidente = $('.incidente');
+            $incidente.attr('href', $incidente.attr('href') + '&uuidCaptcha=' + captcha);
+		})
+	})(jQuery);
+</script><body>
+<input type="hidden" name="cdProcesso" value="RI0036NSX0000"><!-- HEADER--><div class="unj-entity-header">
+
+	
+
+
+
+
+<div class="unj-entity-header__actions">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 col-md-4">
+                <a href="javascript:history.back();" class="unj-link-back">
+                    <i class="icon-back"></i>
+                </a>
+            </div>
+            <div class="col-13 col-md-12 unj-ta-r">
+                <!-- Pasta digital -->
+                
+                <!-- Peticionar -->
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+
+
+
+
+
+
+<div class="unj-entity-header__summary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-13">
+                <!--principal -->
+                
+                    <span class="unj-larger-1 " id="numeroProcesso">
+                        0021842-13.2011.8.26.0564
+                    </span>
+                    
+                    
+                        <span class="unj-tag" id="situacaoProcesso">Julgado</span>
+                    
+                    
+                    
+                
+                <!-- incidente -->
+                
+                
+            </div>
+        </div>
+        <div class="row">
+            
+                <div class="col-md-3">
+                    <span class="unj-label">Classe</span>
+                    <div class="lh-1-1 line-clamp__2" id="classeProcesso"> <span title="Apelação Cível">Apelação Cível</span>
+</div>
+                </div>
+            
+            
+                <div class="col-md-4">
+                    <span class="unj-label">
+                        Assunto
+                    </span>
+                    <div class="lh-1-1 line-clamp__2" id="assuntoProcesso"><span title="DIREITO CIVIL - Responsabilidade Civil - Indenização por Dano Material - Acidente de Trânsito">DIREITO CIVIL - Responsabilidade Civil - Indenização por Dano Material - Acidente de Trânsito</span></div>
+                </div>
+            
+            
+                <div class="col-md-3">
+                    <span class="unj-label">Seção</span>
+                    <div class="lh-1-1 line-clamp__2" id="secaoProcesso"> <span title="Direito Privado 3">Direito Privado 3</span>
+</div>
+                </div>
+            
+            
+                <div class="col-md-3">
+                    <span class="unj-label">Órgão Julgador</span>
+                    <div class="lh-1-1 line-clamp__2" id="orgaoJulgadorProcesso"> <span title="32ª Câmara de Direito Privado">32ª Câmara de Direito Privado</span>
+</div>
+                </div>
+            
+            
+                <div class="col-md-2">
+                    <span class="unj-label">Área</span>
+                    <div class="lh-1-1 line-clamp__2" id="areaProcesso"><span title="Cível">Cível</span></div>
+                </div>
+            
+            <!-- Processo principal -->
+            
+        </div>
+    </div>
+</div>
+
+	
+
+
+
+
+
+<div class="unj-entity-header__details">
+    <div class="container">
+        <div class="unj-ta-r">
+            <a href="#maisDetalhes" class="unj-link-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="maisDetalhes">
+                <span class="unj-link-collapse__show">
+                    <i class="unj-link-collapse__icon glyph glyph-chevron-down"></i>
+                    Mais
+                </span>
+                <span class="unj-link-collapse__hide">
+                    <i class="unj-link-collapse__icon glyph glyph-chevron-up"></i>
+                    Recolher
+                </span>
+            </a>
+        </div>
+        <div id="maisDetalhes" class="collapse" aria-expanded="false">
+            <div class="row unj-row--border-top">
+                
+                
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Relator</span>
+                        <div class="line-clamp__2" id="relatorProcesso"><span title="KIOITSI CHICUTA">KIOITSI CHICUTA</span></div>
+                    </div>
+                
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Valor da ação</span>
+                        <div class="line-clamp__2" id="valorAcaoProcesso"><span title="127.607,92">127.607,92</span></div>
+                    </div>
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Outros números</span>
+                        <div class="text-wrap">
+                            
+                            <div>
+                                    981/2011
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Origem</span>
+                        <div class="line-clamp__2"><span title="Comarca de São Bernardo do Campo / Foro de São Bernardo do Campo / 3ª Vara Cível">Comarca de São Bernardo do Campo / Foro de São Bernardo do Campo / 3ª Vara Cível</span></div>
+                    </div>
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Volume / Apenso</span>
+                        <div class="line-clamp__2" id="volumeApensoProcesso"><span title="3 / 0">3 / 0</span></div>
+                    </div>
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Última carga</span>
+                        <div>
+                            <span class="labelClass">Origem:</span> Serviço de Processamento de Recursos / SJ 3.3.7 - Serv. de Proces. Rec. aos Trib. Sup. Dir. Privado 3.<span class="labelClass">Remessa:</span> 11/10/2018
+                            <span class="labelClass">Destino:</span> Foro / Fórum de São Bernardo do Campo.<span class="labelClass">Recebimento:</span> 11/10/2018 
+                        </div>
+                    </div>
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+  
+  <div class="div-conteudo container unj-mb-40">
+  	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+
+
+
+
+    
+
+
+
+<aside class="aside-nav aside-nav--left"><div class="aside-nav__inner">
+        <header class="aside-nav__main-menu__header"><span class="aside-nav__main-menu__header__text">  Menu e-SAJ</span>
+            <a href="#" class="aside-nav__user__close-button close-offcanvas">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/icons/icon-close--light.png" alt=""></a>
+        </header><nav class="aside-nav__main-menu"><ul class="aside-nav__main-menu__list" id="conteudoMenuEsaj"></ul></nav><div id="esaj-beta-switcher-placeholder"></div>
+    </div>
+</aside><aside class="aside-nav aside-nav--right aside-nav__user"><div class="aside-nav__inner">
+        <div class="aside-nav__user__sign">
+            <div class="aside-nav__user__sign__brand">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/aside/brasoes/br-tjsp.jpg" alt="">
+</div>
+            <ul class="aside-nav__user__sign__list">
+<li><span class="aside-nav__user__sign__place">Tribunal de Justiça do Estado de São Paulo</span></li>
+            </ul>
+<a href="#" class="aside-nav__user__close-button close-offcanvas">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/icons/icon-close--dark.png" alt=""></a>
+        </div>
+        <hr>
+<div class="aside-nav__user__info">
+            <h4 class="aside-nav__user__title">Minha conta</h4>
+            <ul class="aside-nav__user__info__list">
+<li class="aside-nav__user__info__list__item"><span class="aside-nav__user__info__name" id="menuNmUsuarioLogado"></span></li>
+                <li class="aside-nav__user__info__list__item"><span class="aside-nav__user__info__oab" id="menuUsuarioOabs">OAB: </span></li>
+            </ul>
+<ul class="aside-nav__user__info__list-access">
+<li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" href="https://esaj.tjsp.jus.br/esaj/cadastro.do">Meu perfil</a></li>
+                
+                    <li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" href="https://esaj.tjsp.jus.br/caixapostal">Caixa Postal</a></li>
+                
+                <li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" id="logoutLink" href="#">Sair</a></li>
+            </ul>
+</div>
+    </div>
+</aside><header><link rel="shortcut icon" href="https://esaj.tjsp.jus.br/esaj/tema/padrao/clientes/SP/imagens/favicon.ico" type="image/x-icon">
+<link href="https://esaj.tjsp.jus.br/esaj/app.css" rel="stylesheet" type="text/css">
+<nav class="header__navbar"><a class="header__navbar__menu-hamburger open__aside-nav--left navbar-menu-hamburger__item__link">
+            <span class="menu-hamburger__alert" style="display:none;"></span>
+            <span class="glyph glyph-hamburger"></span>
+        </a>
+
+        <h1 class="header__navbar__title" href="">
+<a class="linkLogo" href="https://esaj.tjsp.jus.br/esaj/redirecionarNovoEsaj.do"><strong>e-SAJ</strong></a> | Consulta de Processos do 2ºGrau</h1>
+
+        <ul class="header__navbar__menu header__navbar__menu--right">
+<li class="header__navbar__menu__item header__navbar__menu__item--initials">
+                <a class="header__navbar__brand__initials" href="http://www.tjsp.jus.br/"> TJSP </a>
+            </li>
+            <li class="header__navbar__menu__item header__navbar__menu__item--user">
+               <span class="header__navbar__name open__aside-nav--right">
+                     <span id="headerNmUsuarioLogado" class="header__navbar__name__text"></span>
+                     <span class="glyph glyph-contact header__navbar__name__icon"></span>
+               </span>
+            </li>
+        </ul></nav></header><div class="offcanvas-backdrop"></div>
+
+
+<script>
+    var dict = {
+        'certificado.tituloCertificadoDigital': 'Certificado digital',
+        'certificado.msgCarregandoCertificado': 'Carregando certificados...',
+        'certificado.msgNenhumCertificadoEncontrado': 'Nenhum certificado encontrado',
+        'certificado.msgErroCarregarCertificado': 'Erro ao carregar certificados',
+        'certificado.msgCertificadoExpirado': '[Expirado]',
+        'certificado.msgCertificadoNaoValido': '[Ainda não válido]',
+        'certificado.msgCertificadoNaoIcpBrasil': '[Não ICP-Brasil]',
+        'certificado.tituloProblemasAoAssinar': 'Falha de comunicação com o dispositivo de assinatura digital',
+
+        'label.contato': 'Contato',
+        'label.identificarSe': 'Identificar-se ',
+
+        'mensagem.aguarde': 'Por favor, aguarde.',
+        'mensagem.paginaNaoCarregada': 'Não foi possível carregar a página.',
+        'mensagem.marcarLido': 'Marcar como lido',
+        'mensagem.registrosSelecionados': 'Registros selecionados',
+        'mensagem.registroJaSelecionado': 'Este registro já está selecionado',
+
+        'mensagem.data.invalida': 'A data digitada é inválida.',
+        'mensagem.data.anoInvalido': 'O ano informado deve ser maior que',
+        'mensagem.data.mesInvalido': 'O mês não pode ser maior que 12.',
+        'mensagem.data.mes': 'O mês',
+        'mensagem.data.mesMaior29dias': 'não pode ter mais que 29 dias.',
+        'mensagem.data.mesMaior28dias': 'não pode ter mais que 28 dias.',
+        'mensagem.data.mesMaior31dias': 'não pode ter mais que 31 dias.',
+        'mensagem.data.mesMaior30dias': 'não pode ter mais que 30 dias.',
+
+        'mensagem.email.invalido': 'O formato do endereço de e-mail não é válido. Verifique se ele tem o formato "usuario@dominio".',
+        'mensagem.email.caracteresInvalidos': 'O endereço de e-mail possui caracteres inválidos',
+        'mensagem.email.usuarioInvalido': 'O formato do usuário informado no endereço de e-mail não é válido.',
+        'mensagem.email.ipInvalido': 'O endereço IP informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioInvalido': 'O formato do domínio informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioIncompleto': 'O domínio informado no endereço de e-mail deve possuir pelo menos duas partes. Por exemplo: "usuario@empresa.com.br".',
+
+        'mensagem.texto.tamanhoInvalido': 'O tamanho do texto digitado é maior do que o tamanho permitido. Tamanho permitido:',
+        'mensagem.texto.caracter': 'O caracter',
+        'mensagem.texto.caracterPosicaoInvalida': 'não está permitido na posição',
+
+        'mensagem.numero.numeroInvalido': 'O valor digitado não é um número válido.',
+        'mensagem.numero.numeroNaoPodeCasasDecimais': 'O número não pode conter casas decimais',
+        'mensagem.numero.numeroCasaDecimaisInvalidas': 'O número de casas decimais é inválido. O número pode conter apenas',
+        'mensagem.numero.casaDecimais': 'casas decimais',
+        'mensagem.numero.numeroInteiroInvalido': 'O número de dígitos inteiros é inválido. O número pode conter apenas',
+        'mensagem.numero.digitosInteiros': 'dígitos inteiros',
+        'mensagem.numero.numeroTamanhoInvalido': 'O número digitado não pode ser maior que',
+        'mensagem.numero.numeroZeroInvalido': 'O número digitado deve ser diferente de zero.'
+    }
+</script><script>
+    var appEsajLayout = appEsajLayout || {};
+    appEsajLayout.urlNovoMenuHtml = 'https://esaj.tjsp.jus.br/esaj/menuPortalV2Html.do?servico=190201';
+
+    var appEsajCas = appEsajCas || {};
+    appEsajCas.urlServicoConteudoIdentificacao = 'https://esaj.tjsp.jus.br/sajcas/conteudoIdentificacaoJson?script=1637996681616&retorno=' + encodeURIComponent(location.href);
+</script><script src="https://esaj.tjsp.jus.br/esaj/js/portalV2-bundle.js?n=806192629"></script><script src="https://esaj.tjsp.jus.br/sajcas/seletorVersaoBeta.js?n=434c3578-e863-4461-bb6d-30161efd7bfe&amp;versao=2"></script><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Apensos / Vinculados</h2>
+		
+	
+</div>
+	<!--  Tabela de (apensos) -->
+	<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr>
+<td colspan="3" align="left" id="dadosApensosNaoDisponiveis">Não há processos apensos ou vinculados para este processo.</td>
+				</tr></table>
+<!-- Tabela de (apensos) --><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Números de 1ª Instância</h2>
+		
+	
+</div>
+
+
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<td align="left" valign="top" width="200">Nº de 1ª instância</td>
+		<td align="left" valign="top" width="250">Foro</td>
+		<td align="left" valign="top" width="200">Vara</td>
+		<td align="left" valign="top" width="250">Juiz</td>
+		<td align="left" valign="top" width="*">Obs.</td>
+	  </tr>
+<tr class="fundoEscuro" height="2">
+<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+</table>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr class="fundoClaro">
+<td align="left" valign="top" width="200">
+			
+				
+				
+					0021842-13.2011.8.26.0564
+				
+			
+	    </td>
+		<td align="left" valign="top" width="250">
+	      Foro de São Bernardo do Campo
+	    </td>
+		<td align="left" valign="top" width="200">
+	      3ª Vara Cível
+	    </td>
+	    <td align="left" valign="top" width="250">
+	      Patrícia Svartman Poyares
+		</td>
+		<td align="left" valign="top">
+	      -
+		</td>
+	  </tr></table>
+<div style="padding-top: 10px;">
+	
+	
+
+	
+		
+		
+			<h2 class="subtitle">Partes do Processo</h2>
+		
+	
+</div>
+
+<!--  cabecalho da tabela de lista (partes) -->
+
+
+<!--  dados da lista partes principais (partes) -->
+<table id="tablePartesPrincipais" style="margin-left:15px; margin-top:1px;" align="center" border="0" cellpadding="0" cellspacing="0" width="98%">
+<tr class="fundoClaro poloAtivo">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Apte/Apdo: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Jose Pegoraro
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogada:&amp;nbsp</span>
+		  
+			  
+			  
+				  Lilia Pimentel Dinelly
+			  
+		  
+		  <input type="hidden" value="204320SP"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+<tr class="fundoClaro poloPassivo">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Apdo/Apte: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Rodoglobo - Transportes e Assessoria Ltda
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogado:&amp;nbsp</span>
+		  
+			  
+			  
+				  Marcos Dauber
+			  
+		  
+		  <input type="hidden" value="31278PR"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+</table>
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+		
+		
+	
+
+	
+		
+		
+			<h2 class="subtitle">Movimentações</h2>
+		
+	
+</div>
+
+ 
+	
+
+<table style="margin-left:15px; margin-top:1px;" align="center" border="0" cellpadding="0" cellspacing="0" width="98%">
+<thead>
+<tr>
+<th width="120" class="label" style="vertical-align: bottom">Data</th>
+				  <th valign="middle" width="20" aria-hidden="true"> </th>
+				  <th valign="middle" class="label">Movimento</th>
+				</tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+</thead>
+<tbody id="tabelaUltimasMovimentacoes">
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/05/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Processamento de Recurso
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/05/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento de Recursos aos Trib. Superiores
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/05/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2018.00106645-9, referente ao processo 0021842-13.2011.8.26.0564/90003 - Recurso Especial Cível (Petição Avulsa)</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        06/02/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Protocolo nº 2018.00024549-1 Embargos de Declaração</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        22/01/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 19/12/2017
+Tipo de publicação: Intimação de Acórdão
+Número do Diário Eletrônico: 2491</span>
+
+        
+    </td>
+</tr>
+</tbody>
+<tbody style="display: none;" id="tabelaTodasMovimentacoes">
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/05/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Processamento de Recurso
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/05/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento de Recursos aos Trib. Superiores
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/05/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2018.00106645-9, referente ao processo 0021842-13.2011.8.26.0564/90003 - Recurso Especial Cível (Petição Avulsa)</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        06/02/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Protocolo nº 2018.00024549-1 Embargos de Declaração</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        22/01/2018
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 19/12/2017
+Tipo de publicação: Intimação de Acórdão
+Número do Diário Eletrônico: 2491</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Acórdão registrado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Acórdão registrado sob nº 20170000970913, com 11 folhas.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=70" name="M" cddocumento="70">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=70" name="M" cddocumento="70">
+                    Acordão Finalizado
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Acórdão Dr. Kioitsi Chicuta</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Não-Provimento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Julgado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Negaram provimento ao recurso da ré e deram provimento em parte daquele do autor. V. U.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 13/12/2017
+Tipo de publicação: Despacho
+Número do Diário Eletrônico: 2487</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        12/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Processamento de Grupos e Camaras
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento Grupos e Câmaras - Com Despacho
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Com despacho</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">
+Kioitsi Chicuta</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=63" name="M" cddocumento="63">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=63" name="M" cddocumento="63">
+                    Despacho
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Fls. 451/453. Indefiro o pedido de conversão do julgamento em diligência em face da preclusão da questão aventada. Com efeito, a notícia de que "o aparelho de tacógrafo do V-02 foi encaminhado à Delegacia de Polícia Civil de Cornélio Procópio, através de ofício, por ter sido retirado do veículo por terceiros, no resgate médico do condutor", consta do boletim de ocorrência juntado pelo autor às fls. 20/26 e às fls. 203/207 pela parte adversa, não tendo a ré pleiteado a apresentação do equipamento na fase de instrução processual, tampouco pleiteou a produção de prova pericial no momento oportuno. De tal modo, a medida pleiteada se mostra impertinente na fase recursal, ficando mantido o julgamento das apelações apresentadas na data designada. Tornem à Mesa. Int. São Paulo, 11 de dezembro de 2017. Kioitsi Chicuta Relator</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        05/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para o Relator (Conclusão)
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        05/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2017.00391353-1, referente ao processo 0021842-13.2011.8.26.0564/90002 - Solicitação</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        05/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 04/12/2017
+Tipo de publicação: Próximos Julgados
+Número do Diário Eletrônico: 2481</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        01/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Inclusão em pauta
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Para 14/12/2017</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        01/12/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos à Mesa
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        30/11/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento Grupos e Câmaras - A mesa
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">À Mesa</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        30/11/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=56" name="M" cddocumento="56">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=56" name="M" cddocumento="56">
+                    Despacho À Mesa
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Vistos. Tornem à Mesa. Int. São Paulo, 30 de novembro de 2017. KIOITSI CHICUTA Relator</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        30/11/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">
+Kioitsi Chicuta</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        29/11/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para o Relator (Conclusão)
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        28/11/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2017.00378020-1, referente ao processo 0021842-13.2011.8.26.0564/90001 - Contrarrazões</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        25/10/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 24/10/2017
+Tipo de publicação: Julgados
+Número do Diário Eletrônico: 2456</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        24/10/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 23/10/2017
+Tipo de publicação: Despacho
+Número do Diário Eletrônico: 2455</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        20/10/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Processamento de Grupos e Camaras
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        20/10/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Despacho
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Despacho de fls.425(tira de julgamento): Fica aberto o prazo para que a ré(apelante/apelada) apresente resposta ao recurso de apelação do autor(apelante/apelado) de fls. 299/306, no prazo legal.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/10/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Retirado de Pauta
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Retirado de pauta pelo relator com abertura de prazo para que a ré(apelada/apelante) apresente resposta ao recurso de apelação do autor(apelante/apelado) de fls.299/306 , no prazo legal.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/10/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento Grupos e Câmaras - Devolução ao Cartório
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/10/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">
+Kioitsi Chicuta</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        18/10/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para o Relator (A pedido)
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/10/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 06/10/2017
+Tipo de publicação: Próximos Julgados
+Número do Diário Eletrônico: 2446</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        18/09/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Inclusão em pauta
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Para 19/10/2017</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        18/09/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos à Mesa
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        15/09/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento Grupos e Câmaras - A mesa
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">À Mesa</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        15/09/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=40" name="M" cddocumento="40">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=40" name="M" cddocumento="40">
+                    Expedido Relatório
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Relatório do Voto</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        16/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">
+Kioitsi Chicuta</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        15/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para o Relator (Conclusão)
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        15/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Processamento de Grupos e Camaras
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento de Grupos e Câmaras
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Diligência</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos da Vara de Origem pela Entrada de Recursos
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/08/2017
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Entrada de Recursos
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        12/05/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 11/05/2016
+Tipo de publicação: Despacho
+Número do Diário Eletrônico: 2113</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/05/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Vara de Origem em Diligência
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        10/05/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Processamento de Grupos e Camaras
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/05/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento Grupos e Câmaras - Com Despacho
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Com despacho</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/05/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=29" name="M" cddocumento="29">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=29" name="M" cddocumento="29">
+                    Despacho
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Diante da interposição de embargos de declaração (fls. 336/342) contra r. sentença lançada às fls. 286/291, republicada em 19.04.2016 (fl. 334), remetam-se os autos à origem para os fins de direito. Int. São Paulo, 9 de maio de 2016. Kioitsi Chicuta Relator</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        06/05/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">
+Kioitsi Chicuta</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        05/05/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para o Relator (Conclusão)
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        05/05/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Protocolo nº 2016.00192611-8 Embargos de Declaração</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        05/05/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2016.00192611-8, referente ao processo 0021842-13.2011.8.26.0564/50000 - Embargos de Declaração</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 18/04/2016
+Tipo de publicação: Despacho
+Número do Diário Eletrônico: 2098</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        14/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+            <font color="gray">
+        
+
+        
+            
+            
+                Cópia de sentença/acórdão juntada
+            
+        
+
+        
+            <b><message key="tag.movimentacoes.rotulo.excluida"></message></b>
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+            </font>
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        13/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Processamento de Grupos e Camaras
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        13/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento Grupos e Câmaras - Com Despacho
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Com despacho</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        13/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=18" name="M" cddocumento="18">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=18" name="M" cddocumento="18">
+                    Despacho
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">1- Fls. 324/327 (manifestação do apelado) : Defiro, determinando, inclusive, a republicação da r. sentença para os devidos fins. 2- Retire-se de pauta. Int. São Paulo, 13 de abril de 2016. Kioitsi Chicuta Relator
+
+REPUBLICAÇÃO DA SENTENÇA DE 1º GRAU DE 18.09.2015 COMO SEGUE:
+
+"SENTENÇA
+Processo Físico nº: 0021842-13.2011.8.26.0564
+Classe - Assunto Procedimento Sumário - Acidente de Trânsito
+Requerente: Jose Pegoraro
+Requerido: Rodoglobo Transportes e Assessoria Ltda
+Juiz(a) de Direito: Dr(a). Patricia Svartman Poyares Ribeiro
+VISTOS.
+JOSÉ PEGORARO ajuizou a presente ação de indenização
+em face de RODOGLOBO TRANSPORTES E ASSESSORIA LTDA., alegando, em
+síntese, que na data de 13/10/2009 trafegava com seu veículo pela Rodovia Estadual
+PR323, sentido Mairiporã-Sertanópolis, quando foi surpreendido pelo veículo VW,
+Caminhão Trator, conduzido pelo motorista da ré, JULIANO SIMÕES DA SILVA, o qual
+adentrou na Rodovia sem observar a sinalização e o fluxo de veículos, ocasionando o
+choque entre os carros. Aduziu que o acidente lhe provocou danos de toda ordem.
+Ressaltou que, com o impacto sofrido, ficou preso nas ferragens por cerca de duas
+horas, o que lhe causou fratura do colo do fêmur, fratura da perna e tornozelo, além de
+traumatismos do músculo e do tendão ao nível do tornozelo e do pé. Relata que passou
+por várias cirurgias e que teve que fazer tratamento com ortopedista e infectologista.
+Asseverou que referidas lesões lhe deixaram sérias sequelas, especialmente no que se
+refere à sua capacidade e condição de movimentação física, o que provavelmente a
+impedirá de exercer a profissão de motorista autônomo. Pede indenização por lucros
+cessantes (R$126.805,04), pelos danos materiais relativos aos gastos com
+medicamentos (R$802,88), pelos danos morais (200 salários mínimos), bem como a
+condenação da ré ao pagamento de pensão mensal vitalícia (R$7.459,12). Juntou
+procuração e documentos (fls. 16/167).
+A gratuidade da justiça foi deferida (fl. 173).
+Infrutífera a conciliação, a requerida ofertou contestação (fls.
+180/193), sustentando que houve culpa recíproca dos condutores no acidente narrado na
+inicial, impugnando as indenizações pleiteadas. Ofertaram documentos (fls. 198/215).
+O feito foi saneado (fl. 178), determinando-se a realização de
+prova pericial, cujo laudo foi acostado aos autos (fls. 225/230 e 265).
+Na instrução, foi ouvido o condutor do veículo de propriedade
+da ré, JULIANO SIMÕES DA SILVA (fl. 244).
+O autor apresentou memoriais (fls. 280/282).
+É O RELATÓRIO.
+FUNDAMENTO E DECIDO.
+Cuida a presente demanda de pedido de indenização por
+danos materiais e morais decorrentes de ato ilícito.
+O pedido fundamenta-se na responsabilidade civil
+extracontratual da requerida, empregadora do condutor do veículo caminhão envolvido
+no acidente de trânsito que vitimou o requerente.
+Nesse passo, o artigo 186 do Código Civil enuncia os
+pressupostos da responsabilidade civil subjetiva, dispondo: “Aquele que, por ação ou
+omissão voluntária, negligência ou imprudência, violar direito e causar dano a outrem,
+ainda que exclusivamente moral, comete ato ilícito”.
+Diante do texto legal, os elementos essenciais da
+responsabilidade civil subjetiva são: a) ação ou omissão; b) culpa ou dolo do agente; c)
+relação de causalidade; e d) dano experimentado.
+Por sua vez, dispõe o artigo 932, inciso III, do citado diploma
+legal: “São também responsáveis pela reparação civil o empregador ou comitente, por
+seus empregados, serviçais e prepostos, no exercício do trabalho que lhes competir, ou
+em razão dele”.
+Anote-se que nos termos do artigo 933 do Código Civil, o
+empregador responde pelos atos de seu empregado ou preposto independentemente de
+culpa própria, desde que o causador do dano tenha agido com culpa, posto que, ausente
+o elemento subjetivo, a princípio, o comportamento do empregado é legitimado pelo
+ordenamento jurídico, ficando afastada a responsabilidade civil.
+Neste sentido é o entendimento jurisprudencial sumulado pelo
+Colendo Supremo Tribunal Federal: “é presumida a culpa do patrão ou comitente pelo
+ato culposo do empregado ou preposto” (súmula 341). Pois bem.
+Alega a parte autora que trafegava com seu veículo por via
+preferencial, quando foi surpreendida pelo veículo conduzido pela correquerida que, de
+forma imprudente, adentrou na Rodovia, ocasionando o choque entre os veículos. A
+requerida, por sua vez, alega que a culpa pelo acidente foi da parte requerente, que
+transitava em velocidade incompatível com a via.
+Realmente, restou incontroversa a colisão entre os veículos
+das partes, as quais divergem quanto às circunstâncias em que ocorreram.
+Pois bem. A prova coligida aos autos ampara a narrativa deduzida pela
+parte autora na petição inicial.
+No Boletim de Ocorrência lavrado no local do acidente constou
+que o veículo do postulante trafegava pela Rodovia, enquanto que o veículo da postulada
+cruzava a mesma via. Consta, ainda, desenho do rastro de frenagem deixado no asfalto,
+de cerca de 30 metros, comprovando que o requerente tentou parar e evitar a colisão
+com o caminhão da ré, que interceptou sua trajetória.
+Nesse passo, cumpre ressaltar que é presumida a culpa do
+motorista que invade a via preferencial, sem a cautela devida, e intercepta a
+trajetória de veículo que transita normalmente e com preferência de passagem, em nítida
+violação ao disposto no artigo 44 do Código de Trânsito Brasileiro:
+“Art. 44. Ao aproximar-se de qualquer tipo de
+cruzamento, o condutor do veículo deve demonstrar prudência especial,
+transitando em velocidade moderada, de forma que possa deter seu
+veículo com segurança para dar passagem a pedestre e a veículos que
+tenham o direito de preferência.
+Quanto à manobra, leciona Carlos Roberto Gonçalves
+(Responsabilidade Civil. 10ª Edição. São Paulo: Editora Saraiva, 2008. p. 881 e
+883/884):
+“Quem ingressa em preferencial sem observar
+as devidas cautelas e corta a frente de outro veículo, causando-lhe danos,
+é considerado culpado e responsável pelo pagamento de indenização. (...).
+'Evidenciado que a invasão de via preferencial
+constitui a causa principal e preponderante do acidente, sobrepõe-se ela a
+qualquer infração secundária que pudesse atribuir ao motorista que
+trafegava nessa preferencial (RT, 570:221).
+Age com inegável imprudência o motorista que,
+provindo de rua secundária, ingressa com desatenção em rua preferencial,
+onde se pressupõe maior tráfego. Indispensável que este, em tais
+circunstâncias, pare e descortine ambos os lados da via preferencial, antes
+de prosseguir em sua marcha, não bastando a observância de preceitos
+cautelares, simples parada momentânea, ou redução da velocidade do
+carro. Assim, não pode o motorista que provém da rua secundária transpor
+o cruzamento antes de verificar se está livre e desimpedida a via
+preferencial (JTACSP, Revista dos Tribunais, 108:134).
+Por isso, tem-se decidido que, “por via de regra, quem entra
+em via preferência é que deve tomar as cautelas para evitar a colisão, não sendo
+obrigados os que por ela transitam de, em cada esquina, diminuírem a marcha dos seus
+veículos. Se assim fosse, sem objetivo seria a sua preferência e prejudicado resultaria o
+escoamento do tráfego nos grandes centros' (RT, 284: 474).
+A propósito, preceitua o supracitado diploma que:
+“Art. 34 - O condutor que queira executar
+manobra deverá certificar-se de que pode executá-la sem perigo para os
+demais usuários da via que o seguem, precedem ou vão cruzar com ele,
+considerando sua posição e sua velocidade”.
+O motorista que conduzia o veículo da ré foi ouvido em
+audiência e declarou que, na data dos fatos, foi cruzar o trevo e, devido à neblina, não
+viu nenhum caminhão vindo. De repente, o caminhão do autor saiu do meio da 'fumaça'.
+Admitiu que a preferencial era do requerente, mas alegou que ele estava acima do limite
+de velocidade. Disse, ainda, que a neblina é frequente no local, onde sempre acontecem
+acidentes.
+Assim, se o motorista da ré pretendia ingressar naquela
+Rodovia, cabia a ele adotar todas as cautelas necessárias para efetuar a manobra, sem
+oferecer perigo aos demais usuários da via de trânsito - até porque admitiu que se
+tratava de local perigoso. Desta forma, recai sobre ele a presunção de culpa pelo evento.
+E o ônus probatório de desfazer tal presunção era da
+requerida, nos termos do artigo 333, inciso II, do CPC, do qual, todavia, não se
+desincumbiu no caso em tela.
+Saliente-se que o alegado excesso de velocidade da parte
+autora no momento do acidente não ficou provado nos autos e, mesmo que do contrário
+fosse, em nada beneficiaria a requerida, pois, não tivesse a ré interceptado a trajetória
+daquela, o acidente não teria ocorrido.
+Nesse sentido:
+“Se o veículo da ré (caminhão) foi colhido pelo
+outro que trafegava na via principal, é evidente que o seu ingresso foi
+inoportuno; que o seu condutor não atentou para as condições de tráfego,
+pois lhe cabia a estrita observância da preferência de trânsito, que era do
+veículo de propriedade da autora, que seguia pela via principal. Não tem
+qualquer sentido falar em velocidade excessiva do automóvel, pois esse
+não foi o verdadeiro fator causal. O que importa, é o fato de que o
+caminhão não poderia ingressar na via preferencial e postar-se à frente da
+trajetória do veículo da autora ou de qualquer outro. Trata-se de regra
+elementar de trânsito, que não poderia ser desrespeitada, e essa foi a
+causa do evento, revelando a imprudência e a imperícia do condutor do
+caminhão. A culpa é exclusiva do motorista da ré, uma vez que não se
+poderia exigir do condutor do veículo da autora qualquer redução de
+velocidade, sua que era a absoluta preferência de tráfego, por transitar em
+rodovia principal. O dever de parada prévia para aguardar o momento para
+ingresso com plena segurança era do condutor do caminhão, que vinha
+pela via secundária. Nesse sentido, a lição de Arnaldo Rizzardo: "Quem
+provém de via secundária, deve munir-se dos maiores cuidados antes de
+ingressar na via preferencial. (...) Culpa. Presume-se a de quem adentra
+via preferencial. É ônus do réu elidir total ou parcialmente tal presunção.
+Ausência de prova suficiente para o reconhecimento de culpa concorrente
+(A reparação nos acidentes de trânsito. 9ªed. São Paulo: Editora Revista
+dos Tribunais, 2001. p. 323-324.) (APELAÇÃO Nº
+0007598-15.2004.8.26.0309).
+Provado, portanto, que o comportamento da ré contribuiu
+decisivamente para a ocorrência do sinistro, impossibilitando qualquer alternativa
+contrária para evitar a colisão, deve suportar os prejuízos que sua conduta acarretou,
+mormente quando demonstrados os elementos configuradores da responsabilidade civil.
+Quanto ao pedido de indenização por conta dos danos
+materiais, pelo o que se extrai dos autos, a parte autora se ampara nos gastos relativos
+ao aluguel de cama e à medicação necessária à sua recuperação, que totalizam
+R$614,23 (fls. 144/161).
+Totalmente cabível, no presente caso, o reembolso de tais
+despesas, não cobertas pelo plano de saúde.
+Passo a enfrentar o pleito de indenização por conta dos danos morais.
+Do acidente resultaram as graves consequências,
+comprovadas por meio do prontuário médico (fls. 37 e seguintes) e laudo pericial (fls.
+225/227 e 265), que atestam as lesões experimentadas - politraumatismo, com fratura
+do joelho e perna esquerda. Consta que o requerente se submeteu a tratamento
+cirúrgico, que se complicou devido a infecção óssea. Restaram múltiplas cicatrizes
+no joelho e tornozelo esquerdos, com déficit funcional severo do joelho e
+tornozelo e modorrado do pé, de caráter irreversível. Consta, ainda, que o autor
+ficou parcial e permanentemente incapacitado para atividade laboral braçal, para
+atividade em que deva permanecer em pé e com agachamentos e, ainda, para
+direção de carretas, sendo certo que o requerente trabalhava como cegonheiro (fl.128).
+Partindo dessa conclusão, assentada a responsabilidade,
+resta, então, aquilatar o quantum indenizatório que a conduta acarretou, tendo-se que:
+“... O que se chama de 'dano moral' é, não um
+desfalque no patrimônio, nem mesmo a situação onde só dificilmente se
+poderia avaliar o desfalque, senão a situação onde não há ou não se
+verifica diminuição alguma. [...] dano moral é empregada com sentido
+traslado ou como metáfora: um estrago ou uma lesão (este o termo
+jurídico genérico), na pessoa mas não no patrimônio.[...] O dinheiro pago,
+por sua vez, não poderia recompor a integridade física, psíquica ou moral
+lesada. Não há correspondência nem possível compensação de valores.
+Os valores ditos morais são valores de outra dimensão, irredutíveis ao
+patrimonial.” (Walter Moraes apud Rui Stoco. Responsabilidade Civil e sua
+Interpretação Jurisprudencial. 2. ed. São Paulo: Revista dos Tribunais,
+1995, p. 457-458).
+Em relação ao equivalente que daí decorre, é relevante
+observar que, na ausência de critérios objetivos que permitam quantificar
+economicamente a lesão à honra do cidadão, deve o juiz valer-se, sobretudo, das regras
+de experiência comum e bom senso que, em outras palavras, autorizam o julgamento por
+equidade, fixando essa reparação de tal forma que não seja irrisória, a ponto de
+menosprezar a dor sofrida pela vítima, ou exagerada, tornando-se fonte de
+enriquecimento ilícito.
+Deste modo, tem-se que, no caso em análise, é inconteste o
+abalo emocional sofrido pela parte autora, dado o grave acidente que sofreu, sem
+esquecer-se da angústia suportada durante os tratamentos médicos. Assim,
+considerando que os danos morais devem ser fixados após a análise dos vários fatores
+existentes no caso concreto, que condicionam a justa apreciação de todos os aspectos
+envolvidos; considerando as lesões sofridas pela parte autora, que acabaram implicando
+em cirurgias que não conseguiram evitar sua incapacidade para o trabalho, hei por bem
+fixar a indenização por danos morais em R$30.000,00.
+De rigor, ainda, a condenação da parte ré ao pagamento de
+danos materiais decorrentes dos lucros cessantes, ainda que não na extensão buscada
+na inicial.
+Isso porque, a despeito dos rendimentos informados pelo
+requerente, observo que o comprovante acostado aos autos demonstra que o salário
+líquido recebido pelo autor era de R$2.357,17. Foram apresentados extratos bancários
+que provam a transferência de diversos valores à conta do autor (fls. 133/143), mas não
+se sabe a que título estes pagamentos eram feitos. Não se sabe se tais valores eram, de
+fato, remuneração pelo serviço prestado, ou se eram referentes a reembolso de
+despesas com a manutenção do veículo, com combustível, com gastos com pedágio,etc.
+Assim, o valor apontado na inicial não pode ser considerado
+como o efetivamente ganho pelo autor, pois os extratos juntados não se prestam para tal
+fim, deixando o autor de produzir a prova dos fatos constitutivos de seu direito.
+Anoto, ainda, que o requerente passou a receber benefício
+acidentário após os fatos (fls. 121/127 e 271), primeiro como auxílio-acidente, depois
+transformado em aposentadoria por invalidez.
+Assim, por ser o lucro cessante espécie de indenização na
+qual a parte tem direito de receber o que deixou de auferir em razão do acidente, deve
+ser o autor indenizado apenas quanto à eventual diferença existente entre o benefício
+previdenciário percebido em decorrência do acidente e o valor do seu salário mensal, o
+que será apurado em sede de liquidação de sentença.
+Quanto ao valor da pensão vitalícia, deve-se inicialmente
+levar em conta a função desempenhada e a renda auferida pelo autor à época dos fatos,
+o que já foi analisado. Assim, será considerado o valor de R$2.357,17como renda
+mensal do autor.
+Ainda, para a aferição do valor almejado deve ser sopesado o
+percentual da redução da capacidade de trabalho. Para tanto a tabela SUSEP é
+perfeitamente aplicável, restou estipulado pelo laudo pericial que a perda da capacidade
+foi de 40%, percentual este que deverá incidir sobre o valor da renda estipulada.
+Neste sentido:
+“Esta C. Câmara julgadora, por sua vez, manteve
+em 25% de um salário mínimo a pensão vitalícia de pessoa que foi parcial e
+permanentemente incapacitada para o trabalho em proporção de 25%, nos
+termos da tabela da SUSEP” (TJSP, 12ª Câm. de Dir. Privado, Apelação nº
+0010423-38.2002.8.26.0361, Rel. Des. Lídia Conceição, j. 12/03/2014).
+Destarte, o valor da pensão vitalícia mensal terá por base o
+valor incontroverso de R$942,80,00 (percentual de 40% do valor da renda mensal
+considerada), devido desde o dia do acidente até o falecimento do autor ou quando este
+completar 70 (setenta) anos.
+POSTO ISSO, com fundamento no artigo 269, inciso I do CPC,
+JULGO PARCIALMENTE PROCEDENTE A AÇÃO, e condeno a parte requerida a
+pagar à parte autora: (i) indenização por danos materiais referentes aos valores
+despendidos com medicamentos (R$614,23), corrigidos desde a data do desembolso; (ii)
+indenização por danos morais no montante de R$30.000,00, com correção monetária a
+partir desta data e juros moratórios contados da época do evento danoso (STJ, Súmula
+54); (iii) indenização pelos lucros cessantes, consistente na diferença existente entre o
+benefício previdenciário percebido pelo autor em decorrência do acidente e o valor do
+seu salário mensal à época dos fatos, calculados desde a data do acidente até o trânsito
+da demanda, a ser apurada em liquidação de sentença o valor de cada mês, com
+incidência de correção monetária desde o vencimento e juros de mora de 1% ao mês
+desde a citação; (iv) pensão mensal, fixada em R$942,80,00, devida a partir da data do
+acidente até o falecimento do autor, ou quando este completar 70 (setenta) anos, a ser
+paga no dia 10 de cada mês, observando o pagamento em parcela única quanto às
+parcelas vencidas, com correção monetária a partir desta data e juros moratórios
+contados da época do evento danoso (STJ, Súmula 54).
+Mínima a sucumbência da parte autora, arcará a ré com o
+pagamento do equivalente a 3/4 da custas e despesas do processo, bem como de
+honorários ao patrono da parte autora, os quais arbitro, à vista do trabalho realizado,
+valor e complexidade da causa, em R$2.500,00. A parte autora arcará com o restante.
+P.R.I.C.
+São Bernardo do Campo, 18 de setembro de 2015.
+PATRÍCIA SVARTMAN POYARES RIBEIRO
+Juíza de Direito
+(assinado digitalmente)
+DOCUMENTO ASSINADO DIGITALMENTE NOS TERMOS DA LEI 11.419/2006,
+CONFORME IMPRESSÃO À MARGEM DIREITA
+Para conferir o original, acesse o site https://esaj.tjsp.jus.br/esaj, informe o processo 0021842-13.2011.8.26.0564 e código FO0000004N2SG.
+Este documento foi liberado nos autos em 21/09/2015 às 11:17, é cópia do original assinado digitalmente por PATRICIA SVARTMAN POYARES RIBEIRO"
+
+Ao apelado para que observe as fls.292 os valores de custas e porte de remessa e retorno de eventual interposição de recurso de apelação: cálculo de custas, vl. mínimo 5UFESPs, vl Máximo 3000 UFESPs, conf. Lei 12.627/2012, art 4º, II. Vl da Causa: R$ 127.607,92; Valor Devido: R$ 2.552,15; Porte de Remessa e retorno: R$ 65,40 (2 volumes).</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        13/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">
+Kioitsi Chicuta</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        13/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para o Relator (Conclusão)
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        13/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Documento
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Juntado protocolo nº 2016.00160827-6, referente ao processo 0021842-13.2011.8.26.0564/90000 - Juntada de Subst. - Int Adv.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+            <font color="gray">
+        
+
+        
+            
+            
+                Inclusão em pauta
+            
+        
+
+        
+            <b><message key="tag.movimentacoes.rotulo.excluida"></message></b>
+        
+
+        <br><span style="font-style: italic;">Para 28/04/2016</span>
+
+        
+            </font>
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        11/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos à Mesa
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        08/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Processamento Grupos e Câmaras - A mesa
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">À Mesa</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        08/04/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=11" name="M" cddocumento="11">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=11" name="M" cddocumento="11">
+                    Expedido Relatório
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Relatório do Voto</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        29/02/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">
+Kioitsi Chicuta</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        26/02/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 25/02/2016
+Tipo de publicação: Distribuídos
+Número do Diário Eletrônico: 2063</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        24/02/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Relator (Conclusão)
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        24/02/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Distribuição por Sorteio
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Órgão Julgador: 49 - 32ª Câmara de Direito Privado
+Relator: 12302 - Kioitsi Chicuta</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        17/02/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 16/02/2016
+Tipo de publicação: Entrados
+Número do Diário Eletrônico: 2056</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        17/02/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 16/02/2016
+Tipo de publicação: Entrados
+Número do Diário Eletrônico: 2056</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        15/02/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Recebidos os Autos pelo Distribuidor de Recursos
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        15/02/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Remetidos os Autos para Distribuição de Recursos
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        12/02/2016
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Processo Cadastrado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">SJ 2.1.3 - Serviço de Entrada de Autos de Direito Privado 3</span>
+
+        
+    </td>
+</tr>
+</tbody>
+</table>
+<div id="divLinksTituloBlocoMovimentacoes" style="text-align:right">
+		
+
+
+
+
+
+
+
+<input id="mensagemNaoExibidamovimentacoes" type="hidden" value=""><input id="linkNaoExibidomovimentacoes" type="hidden" value="Recolher"><span id="mensagensExibindomovimentacoes" class="mensagemExibindo">
+
+</span>  
+<a id="linkmovimentacoes" href="javascript:" class="linkNaoSelecionado unj-link-collapse">
+    <span id="setasDireitamovimentacoes" class="setasDireita">
+        <i class="unj-link-collapse__icon glyph glyph-chevron-down"></i>
+    </span>
+    Mais</a>
+
+<script>
+	$(function() {
+		var controlarLink = function() {
+			var $linkNaoExibido = $('input#linkNaoExibidomovimentacoes');
+			var conteudoLinkNaoApresentado = $linkNaoExibido.val();
+			var $link = $('a#linkmovimentacoes');
+
+			$linkNaoExibido.val($link.html());
+			$link.html(conteudoLinkNaoApresentado);
+		};
+
+		var controlarMensagem = function() {
+			var $mensagemNaoExibida = $('input#mensagemNaoExibidamovimentacoes');
+			var $spanMensagem = $('span#mensagensExibindomovimentacoes');
+			var mensagemExibida = $spanMensagem.html();
+			var mensagemNaoExibida = $mensagemNaoExibida.val();
+
+			$spanMensagem.html(mensagemNaoExibida);
+			$mensagemNaoExibida.val(mensagemExibida);
+		};
+
+		var controlarMensagemLink = function() {
+			controlarMensagem();
+			controlarLink();
+		};
+
+		var esconderElementosExtrasMostrarDefault = function() {
+			$('#tabelaTodasMovimentacoes').hide();
+			$('#tabelaUltimasMovimentacoes').show();
+		};
+
+		var mostrarElementosExtrasEsconderDefault = function() {
+			$('#tabelaUltimasMovimentacoes').hide();
+			$('#tabelaTodasMovimentacoes').show();
+		};
+
+		var initPagina = function() {
+            var setasDireita = '<span id="setasDireitamovimentacoes" class="setasDireita"><i class="unj-link-collapse__icon glyph glyph-chevron-up"></i></span>';
+			var $linkEscondido = $('input#linkNaoExibidomovimentacoes');
+			$linkEscondido.val(setasDireita+$linkEscondido.val());
+		};
+
+		var bindLink = function() {
+			var $link = $('a#linkmovimentacoes');
+			$link.funcToggle('click', mostrarElementosExtrasEsconderDefault, esconderElementosExtrasMostrarDefault);
+			$link.bind('click', controlarMensagemLink);
+		};
+
+		initPagina();
+		bindLink();
+		esconderElementosExtrasMostrarDefault();
+	});
+</script>
+</div>
+
+			  	
+
+			  	
+
+			  	
+			  	
+			  	
+			
+	  	
+			
+				
+				
+			  	
+
+				
+		  			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Subprocessos e Recursos</h2>
+		
+	
+</div>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<th width="140" style="text-align:left">
+					Recebido em
+				</th>
+				
+				<th width="*">Classe</th>
+		    </tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td></td>
+<td></td>
+			</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+						29/04/2016
+					</td>
+					
+
+
+
+
+
+
+<td width="*">
+	<a href="/cposg/show.do?processo.codigo=RI0036NSX12KW&amp;uuidCaptcha=" target="_top">
+		Embargos de Declaração Cível
+		
+			 - 50000
+		
+		
+	</a>
+</td>
+
+				</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+						02/02/2018
+					</td>
+					
+
+
+
+
+
+
+<td width="*">
+	<a href="/cposg/show.do?processo.codigo=RI0036NSX12KX&amp;uuidCaptcha=" target="_top">
+		Embargos de Declaração Cível
+		
+			 - 50001
+		
+		
+	</a>
+</td>
+
+				</tr>
+</table>
+<!--  incidentes --><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Petições diversas</h2>
+		
+	
+</div>
+<!--  Tabela de petições diversas -->
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<thead>
+<tr class="label">
+<th width="140" style="text-align:left">Data</th>
+			      <th width="*">Tipo</th>
+			    </tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td></td>
+					<td></td>
+				</tr>
+</thead>
+<tbody>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+							11/04/2016
+						</td>
+						<td width="*">
+							Juntada de Subst. - Int Adv.<br>
+</td>
+					</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+							22/11/2017
+						</td>
+						<td width="*">
+							Contra-Razões<br>
+</td>
+					</tr>
+<tr class="fundoClaro">
+<td width="140" style="text-align:left">
+							04/12/2017
+						</td>
+						<td width="*">
+							Solicitação<br>
+</td>
+					</tr>
+<tr class="fundoEscuro">
+<td width="140" style="text-align:left">
+							04/05/2018
+						</td>
+						<td width="*">
+							Recurso Especial Cível (Petição Avulsa)<br>
+</td>
+					</tr>
+</tbody>
+</table>
+<!--  Tabela de petições diversas --><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Composição do Julgamento</h2>
+		
+	
+</div>
+	
+	<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<td width="140">Participação</td>
+		  <td>Magistrado</td>
+		</tr>
+<tr class="fundoEscuro" height="2">
+<td></td>
+			<td></td>
+		</tr>
+</table>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="fundoClaro itemComposicaoJulgamento">
+<td valign="top" width="140" class="label" style="padding-bottom: 5px">
+		      Relator
+			</td>
+			<td valign="top" style="padding-bottom: 5px">
+		      Kioitsi Chicuta (33480)
+		    </td>
+		  </tr>
+<tr class="fundoEscuro itemComposicaoJulgamento">
+<td valign="top" width="140" class="label" style="padding-bottom: 5px">
+		      2º 
+			</td>
+			<td valign="top" style="padding-bottom: 5px">
+		      Francisco Occhiuto Júnior 
+		    </td>
+		  </tr>
+<tr class="fundoClaro itemComposicaoJulgamento">
+<td valign="top" width="140" class="label" style="padding-bottom: 5px">
+		      3º 
+			</td>
+			<td valign="top" style="padding-bottom: 5px">
+		      Luis Fernando Nishi 
+		    </td>
+		  </tr>
+</table>
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Julgamentos</h2>
+		
+	
+</div>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<td align="left" valign="top" width="150">Data</td>
+		<td align="left" valign="top" width="220">Situação do julgamento</td>
+		<td align="left" valign="top" width="*">Decisão</td>
+	  </tr>
+<tr class="fundoEscuro" height="2">
+<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+</table>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr class="fundoClaro">
+<td valign="top" align="left" width="150">
+		      14/12/2017
+			</td>
+			<td align="left" valign="top" width="220">
+		      Julgado
+		    </td>
+			<td align="left" valign="top" width="*">
+		      Negaram provimento ao recurso da ré e deram provimento em parte daquele do autor. V. U.
+		    </td>
+		  </tr></table>
+<br><br><footer><nav class="navbar__footer"><div class="navbar__footer__container">
+
+            <ul class="navbar__footer__list-brand">
+<li class="navbar__footer__list-brand__item">
+                    <a href="https://www.softplan.com.br/solucoes/saj-tribunais/" class="navbar__footer__list-brand__item__link link_softplan_tribunais">
+                        <img src="https://esaj.tjsp.jus.br/esaj/img/brand/icon-saj.png" alt="SAJ"></a>
+                </li>
+                <li class="navbar__footer__list-brand__item">
+                    <a href="https://www.softplan.com.br/" class="navbar__footer__list-brand__item__link link_softplan">
+                        <img src="https://esaj.tjsp.jus.br/esaj/img/brand/icon-softplan.png" alt="Softplan"></a>
+                </li>
+            </ul>
+<ul class="navbar__footer__list-actions"></ul>
+</div>
+    </nav></footer>
+</div>
+	
+
+</body>
+</html>
